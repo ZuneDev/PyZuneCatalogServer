@@ -1,0 +1,2289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- http://catalog.zune.net/v3.2/en-US/hubs/music -->
+
+<a:feed xmlns:a="http://www.w3.org/2005/Atom"
+    xmlns:os="http://a9.com/-/spec/opensearch/1.1/"
+    xmlns="http://schemas.zune.net/catalog/music/2007/10">
+    <a:link rel="self" type="application/atom+xml" href="/v3.2/en-US/hubs/music" />
+    <a:updated>2012-01-12T12:54:25.8916634Z</a:updated>
+    <a:title type="text">music</a:title>
+    <a:id>music</a:id>
+    <templates>
+        <template>
+            <mimeType>application/uix</mimeType>
+            <templateName>MusicHub</templateName>
+        </template>
+    </templates>
+    <a:entry>
+        <a:link rel="alternate" type="application/atom+xml" href="/v3.2/en-US/music/collection/features/8dd76d53-02b4-4987-b9ba-48bce91f6ea4" />
+        <a:updated>2012-01-12T12:54:25.9072634Z</a:updated>
+        <a:title type="text">List Of Items</a:title>
+        <a:id>urn:uuid:8dd76d53-02b4-4987-b9ba-48bce91f6ea4</a:id>
+        <index>1</index>
+        <link>
+            <type>FeatureCollection</type>
+            <target>8DD76D53-02B4-4987-B9BA-48BCE91F6EA4</target>
+        </link>
+        <editorialItems>
+            <editorialItem>
+                <id>urn:uuid:616842d6-fcdc-47d0-9bc6-4cb1db30e7cb</id>
+                <link>
+                    <type>Album</type>
+                    <target>852b0c07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Yo Gotti</title>
+                <text>Artist of The Week: New album - Live From The Kitchen               </text>
+                <sequenceNumber>1</sequenceNumber>
+                <image>
+                    <id>urn:uuid:b58f33e8-4f8b-4642-a061-105417d32d6f</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:b58f33e8-4f8b-4642-a061-105417d32d6f</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:e4b828f1-46ab-4d6f-a519-acab98d69d5d</id>
+                <link>
+                    <type>Album</type>
+                    <target>1eed0b07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Train</title>
+                <text>Drive By: California band's irresistible new single         </text>
+                <sequenceNumber>2</sequenceNumber>
+                <image>
+                    <id>urn:uuid:f2d3e4c0-65cd-4f46-9b12-88d4a35ecd3c</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:f2d3e4c0-65cd-4f46-9b12-88d4a35ecd3c</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:25d107d7-4904-4052-ba7c-b622a3119e77</id>
+                <link>
+                    <type>Album</type>
+                    <target>ba660b07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Air</title>
+                <text>Seven Stars: The French electronic duo's latest song           </text>
+                <sequenceNumber>3</sequenceNumber>
+                <image>
+                    <id>urn:uuid:43524a58-c57c-4b61-ac22-9379e4398b89</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:43524a58-c57c-4b61-ac22-9379e4398b89</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:f7a708df-fca1-4fc2-9f68-066e8e555f70</id>
+                <link>
+                    <type>Album</type>
+                    <target>78e10a07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Safetysuit</title>
+                <text>These Times: The Southern pop band's breakthrough               </text>
+                <sequenceNumber>4</sequenceNumber>
+                <image>
+                    <id>urn:uuid:b90e9928-b38b-46d3-81dd-612865389853</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:b90e9928-b38b-46d3-81dd-612865389853</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:66493773-37bb-41f2-bf8e-f6a157cca89a</id>
+                <link>
+                    <type>Album</type>
+                    <target>0d790b07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>David Crowder*Band</title>
+                <text>Give Us Rest: The inspirational artist's ambitious new work                </text>
+                <sequenceNumber>5</sequenceNumber>
+                <image>
+                    <id>urn:uuid:496340b9-7c6a-4666-ab45-d594b18b36c0</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:496340b9-7c6a-4666-ab45-d594b18b36c0</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:e4f261e0-5604-4e5b-8f22-a2109d6ae60f</id>
+                <link>
+                    <type>Album</type>
+                    <target>0fe10b07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Trending Up</title>
+                <text>Nicki Minaj's new one           </text>
+                <sequenceNumber>6</sequenceNumber>
+                <image>
+                    <id>urn:uuid:f9232280-eedb-45c8-84d4-ac3505790f2b</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:f9232280-eedb-45c8-84d4-ac3505790f2b</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:f682834c-0e23-494c-813c-86c213ee27a2</id>
+                <link>
+                    <type>Playlist</type>
+                    <target>0cf34e57-dc19-47d7-bb7c-0b42b66d56a9</target>
+                </link>
+                <title>Hot This Week</title>
+                <text>Jan. 10-16, 2012           </text>
+                <sequenceNumber>7</sequenceNumber>
+                <image>
+                    <id>urn:uuid:a489a7bd-5f99-452a-afb3-e6d17ba870bb</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:a489a7bd-5f99-452a-afb3-e6d17ba870bb</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:dea418bc-fc94-42c0-afd7-0928ce8c5a4c</id>
+                <link>
+                    <type>Hub</type>
+                    <target>peopleschoiceawards2012music</target>
+                </link>
+                <title>People's Choice</title>
+                <text>Music award nominees                                   </text>
+                <sequenceNumber>8</sequenceNumber>
+                <image>
+                    <id>urn:uuid:fcf8ad71-3822-4e90-8425-4b7fb43f3e6c</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:fcf8ad71-3822-4e90-8425-4b7fb43f3e6c</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:d63d1b9d-34d8-4bc4-96dd-b3621a4706c6</id>
+                <link>
+                    <type>MusicGenre</type>
+                    <target>country</target>
+                </link>
+                <title>Country</title>
+                <text>The biggest new hits       </text>
+                <sequenceNumber>9</sequenceNumber>
+                <image>
+                    <id>urn:uuid:009797f8-2cd1-4984-a9c4-bf887236e8fa</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:009797f8-2cd1-4984-a9c4-bf887236e8fa</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:38739476-7541-485d-b82b-4e38ebf89801</id>
+                <link>
+                    <type>Hub</type>
+                    <target>bestof2011music</target>
+                </link>
+                <title>Best Of 2011</title>
+                <text>Take a last listen to Zune's picks for the top music of the year                   </text>
+                <sequenceNumber>10</sequenceNumber>
+                <image>
+                    <id>urn:uuid:8f341852-abd1-49cd-b15f-73db5f1b7a5d</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:8f341852-abd1-49cd-b15f-73db5f1b7a5d</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:d2b99419-ae07-48fd-8293-a5261fda887d</id>
+                <link>
+                    <type>Album</type>
+                    <target>799dd006-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Album Of The Day: Jan. 12</title>
+                <text>Peter Frampton: Frampton Comes Alive! - The quintessential concert recording of the '70s, released 36 years ago this week               </text>
+                <sequenceNumber>11</sequenceNumber>
+                <image>
+                    <id>urn:uuid:da432556-b051-4049-a4e4-57b3dbe569a1</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:da432556-b051-4049-a4e4-57b3dbe569a1</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:c1c63622-4415-45b0-883b-ea57aa1f9711</id>
+                <link>
+                    <type>MusicGenre</type>
+                    <target>pop</target>
+                </link>
+                <title>Pop</title>
+                <text>The first big chart hits of the new year, including Jason Mraz's new ballad I Won't Give Up                  	
+                </text>
+                <sequenceNumber>12</sequenceNumber>
+                <image>
+                    <id>urn:uuid:82ca312e-3039-4fb8-8bb2-70f50ffefed7</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:82ca312e-3039-4fb8-8bb2-70f50ffefed7</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:729f5e4f-ba15-4d5c-8171-b34028d2b5d9</id>
+                <link>
+                    <type>MusicGenre</type>
+                    <target>rock</target>
+                </link>
+                <title>Rock</title>
+                <text>The newest hits from alternative, metal, indie and classic rock, including the latest from symphonic metal band Nightwish          
+                </text>
+                <sequenceNumber>13</sequenceNumber>
+                <image>
+                    <id>urn:uuid:a90f459d-40f6-4d01-94a9-f70a2a354d55</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:a90f459d-40f6-4d01-94a9-f70a2a354d55</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:50c80789-3afa-4ff1-ac51-35ebef9fc349</id>
+                <link>
+                    <type>MusicGenre</type>
+                    <target>hipHop</target>
+                </link>
+                <title>Hip Hop</title>
+                <text>Up-to-the-minute hits from the world of rap, including the new single from Mystikal featuring Birdman and Lil Wayne                 
+                </text>
+                <sequenceNumber>14</sequenceNumber>
+                <image>
+                    <id>urn:uuid:a65e65a9-d9cc-47df-a1da-7606cdff5433</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:a65e65a9-d9cc-47df-a1da-7606cdff5433</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:8699708e-0f13-4460-9a2b-659c9126cbe3</id>
+                <link>
+                    <type>Features</type>
+                    <target>musicvideo</target>
+                </link>
+                <title>Music Videos</title>
+                <text>Tyga's new video for Rack City, and many more now available for streaming with Zune Pass                                 </text>
+                <sequenceNumber>15</sequenceNumber>
+                <image>
+                    <id>urn:uuid:f9edfb1a-9fc8-4a6a-812f-e41db3b8fe58</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:f9edfb1a-9fc8-4a6a-812f-e41db3b8fe58</id>
+                </backgroundImage>
+            </editorialItem>
+        </editorialItems>
+        <features>
+            <feature>
+                <id>urn:uuid:616842d6-fcdc-47d0-9bc6-4cb1db30e7cb</id>
+                <link>
+                    <type>Album</type>
+                    <target>852b0c07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Yo Gotti</title>
+                <text>Artist of The Week: New album - Live From The Kitchen               </text>
+                <sequenceNumber>1</sequenceNumber>
+                <image>
+                    <id>urn:uuid:b58f33e8-4f8b-4642-a061-105417d32d6f</id>
+                </image>
+                <isExplicit>True</isExplicit>
+            </feature>
+            <feature>
+                <id>urn:uuid:e4b828f1-46ab-4d6f-a519-acab98d69d5d</id>
+                <link>
+                    <type>Album</type>
+                    <target>1eed0b07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Train</title>
+                <text>Drive By: California band's irresistible new single         </text>
+                <sequenceNumber>2</sequenceNumber>
+                <image>
+                    <id>urn:uuid:f2d3e4c0-65cd-4f46-9b12-88d4a35ecd3c</id>
+                </image>
+                <isExplicit>False</isExplicit>
+            </feature>
+            <feature>
+                <id>urn:uuid:25d107d7-4904-4052-ba7c-b622a3119e77</id>
+                <link>
+                    <type>Album</type>
+                    <target>ba660b07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Air</title>
+                <text>Seven Stars: The French electronic duo's latest song           </text>
+                <sequenceNumber>3</sequenceNumber>
+                <image>
+                    <id>urn:uuid:43524a58-c57c-4b61-ac22-9379e4398b89</id>
+                </image>
+                <isExplicit>False</isExplicit>
+            </feature>
+            <feature>
+                <id>urn:uuid:f7a708df-fca1-4fc2-9f68-066e8e555f70</id>
+                <link>
+                    <type>Album</type>
+                    <target>78e10a07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Safetysuit</title>
+                <text>These Times: The Southern pop band's breakthrough               </text>
+                <sequenceNumber>4</sequenceNumber>
+                <image>
+                    <id>urn:uuid:b90e9928-b38b-46d3-81dd-612865389853</id>
+                </image>
+                <isExplicit>False</isExplicit>
+            </feature>
+            <feature>
+                <id>urn:uuid:66493773-37bb-41f2-bf8e-f6a157cca89a</id>
+                <link>
+                    <type>Album</type>
+                    <target>0d790b07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>David Crowder*Band</title>
+                <text>Give Us Rest: The inspirational artist's ambitious new work                </text>
+                <sequenceNumber>5</sequenceNumber>
+                <image>
+                    <id>urn:uuid:496340b9-7c6a-4666-ab45-d594b18b36c0</id>
+                </image>
+                <isExplicit>False</isExplicit>
+            </feature>
+            <feature>
+                <id>urn:uuid:e4f261e0-5604-4e5b-8f22-a2109d6ae60f</id>
+                <link>
+                    <type>Album</type>
+                    <target>0fe10b07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Trending Up</title>
+                <text>Nicki Minaj's new one           </text>
+                <sequenceNumber>6</sequenceNumber>
+                <image>
+                    <id>urn:uuid:f9232280-eedb-45c8-84d4-ac3505790f2b</id>
+                </image>
+                <isExplicit>True</isExplicit>
+            </feature>
+            <feature>
+                <id>urn:uuid:f682834c-0e23-494c-813c-86c213ee27a2</id>
+                <link>
+                    <type>Playlist</type>
+                    <target>0cf34e57-dc19-47d7-bb7c-0b42b66d56a9</target>
+                </link>
+                <title>Hot This Week</title>
+                <text>Jan. 10-16, 2012           </text>
+                <sequenceNumber>7</sequenceNumber>
+                <image>
+                    <id>urn:uuid:a489a7bd-5f99-452a-afb3-e6d17ba870bb</id>
+                </image>
+                <isExplicit>False</isExplicit>
+            </feature>
+            <feature>
+                <id>urn:uuid:dea418bc-fc94-42c0-afd7-0928ce8c5a4c</id>
+                <link>
+                    <type>Hub</type>
+                    <target>peopleschoiceawards2012music</target>
+                </link>
+                <title>People's Choice</title>
+                <text>Music award nominees                                   </text>
+                <sequenceNumber>8</sequenceNumber>
+                <image>
+                    <id>urn:uuid:fcf8ad71-3822-4e90-8425-4b7fb43f3e6c</id>
+                </image>
+            </feature>
+            <feature>
+                <id>urn:uuid:d63d1b9d-34d8-4bc4-96dd-b3621a4706c6</id>
+                <link>
+                    <type>MusicGenre</type>
+                    <target>country</target>
+                </link>
+                <title>Country</title>
+                <text>The biggest new hits       </text>
+                <sequenceNumber>9</sequenceNumber>
+                <image>
+                    <id>urn:uuid:009797f8-2cd1-4984-a9c4-bf887236e8fa</id>
+                </image>
+            </feature>
+            <feature>
+                <id>urn:uuid:38739476-7541-485d-b82b-4e38ebf89801</id>
+                <link>
+                    <type>Hub</type>
+                    <target>bestof2011music</target>
+                </link>
+                <title>Best Of 2011</title>
+                <text>Take a last listen to Zune's picks for the top music of the year                   </text>
+                <sequenceNumber>10</sequenceNumber>
+                <image>
+                    <id>urn:uuid:8f341852-abd1-49cd-b15f-73db5f1b7a5d</id>
+                </image>
+            </feature>
+            <feature>
+                <id>urn:uuid:d2b99419-ae07-48fd-8293-a5261fda887d</id>
+                <link>
+                    <type>Album</type>
+                    <target>799dd006-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Album Of The Day: Jan. 12</title>
+                <text>Peter Frampton: Frampton Comes Alive! - The quintessential concert recording of the '70s, released 36 years ago this week               </text>
+                <sequenceNumber>11</sequenceNumber>
+                <image>
+                    <id>urn:uuid:da432556-b051-4049-a4e4-57b3dbe569a1</id>
+                </image>
+                <isExplicit>False</isExplicit>
+            </feature>
+            <feature>
+                <id>urn:uuid:c1c63622-4415-45b0-883b-ea57aa1f9711</id>
+                <link>
+                    <type>MusicGenre</type>
+                    <target>pop</target>
+                </link>
+                <title>Pop</title>
+                <text>The first big chart hits of the new year, including Jason Mraz's new ballad I Won't Give Up                  	
+                </text>
+                <sequenceNumber>12</sequenceNumber>
+                <image>
+                    <id>urn:uuid:82ca312e-3039-4fb8-8bb2-70f50ffefed7</id>
+                </image>
+            </feature>
+            <feature>
+                <id>urn:uuid:729f5e4f-ba15-4d5c-8171-b34028d2b5d9</id>
+                <link>
+                    <type>MusicGenre</type>
+                    <target>rock</target>
+                </link>
+                <title>Rock</title>
+                <text>The newest hits from alternative, metal, indie and classic rock, including the latest from symphonic metal band Nightwish          
+                </text>
+                <sequenceNumber>13</sequenceNumber>
+                <image>
+                    <id>urn:uuid:a90f459d-40f6-4d01-94a9-f70a2a354d55</id>
+                </image>
+            </feature>
+            <feature>
+                <id>urn:uuid:50c80789-3afa-4ff1-ac51-35ebef9fc349</id>
+                <link>
+                    <type>MusicGenre</type>
+                    <target>hipHop</target>
+                </link>
+                <title>Hip Hop</title>
+                <text>Up-to-the-minute hits from the world of rap, including the new single from Mystikal featuring Birdman and Lil Wayne                 
+                </text>
+                <sequenceNumber>14</sequenceNumber>
+                <image>
+                    <id>urn:uuid:a65e65a9-d9cc-47df-a1da-7606cdff5433</id>
+                </image>
+            </feature>
+            <feature>
+                <id>urn:uuid:8699708e-0f13-4460-9a2b-659c9126cbe3</id>
+                <link>
+                    <type>Features</type>
+                    <target>musicvideo</target>
+                </link>
+                <title>Music Videos</title>
+                <text>Tyga's new video for Rack City, and many more now available for streaming with Zune Pass                                 </text>
+                <sequenceNumber>15</sequenceNumber>
+                <image>
+                    <id>urn:uuid:f9edfb1a-9fc8-4a6a-812f-e41db3b8fe58</id>
+                </image>
+            </feature>
+        </features>
+    </a:entry>
+    <a:entry>
+        <a:link rel="alternate" type="application/atom+xml" href="/v3.2/en-US/music/collection/albums/da1579dc-d89e-4e47-b838-cf3870bba0f1" />
+        <a:updated>2012-01-12T12:54:25.9072634Z</a:updated>
+        <a:title type="text">List Of Items</a:title>
+        <a:id>urn:uuid:da1579dc-d89e-4e47-b838-cf3870bba0f1</a:id>
+        <index>2</index>
+        <link>
+            <type>AlbumCollection</type>
+            <target>DA1579DC-D89E-4E47-B838-CF3870BBA0F1</target>
+        </link>
+        <editorialItems>
+            <editorialItem>
+                <id>urn:uuid:d2eb2b9f-78d3-4644-a148-f3a819fbc270</id>
+                <link>
+                    <type>Album</type>
+                    <target>ed3e0c07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>The Shins</title>
+                <text>Simple Song</text>
+                <sequenceNumber>1</sequenceNumber>
+                <image>
+                    <id>urn:uuid:2e943184-c280-4699-9255-1b3fd3bbdc3a</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:bdbc52ad-844b-48f0-ba7f-589744ba19df</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:7f806e08-644b-40a1-bceb-256ad4b2f59a</id>
+                <link>
+                    <type>Album</type>
+                    <target>61d00a07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Mystikal</title>
+                <text>Original (Parental Advisory)</text>
+                <sequenceNumber>2</sequenceNumber>
+                <image>
+                    <id>urn:uuid:ddddd965-4819-4975-a832-776797f72c94</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:37aaaab6-b3a6-48c5-bf7d-506cab16266c</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:bb0019c6-7075-488b-94ef-f470849ec9dd</id>
+                <link>
+                    <type>Album</type>
+                    <target>0fe10b07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Nicki Minaj</title>
+                <text>Stupid Hoe (Parental Advisory)</text>
+                <sequenceNumber>3</sequenceNumber>
+                <image>
+                    <id>urn:uuid:7f563c4f-3425-4dd8-9c59-e4b75631158a</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:1bc1f1db-7119-40e9-8997-dcea64847d07</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:d827da0d-0072-4dff-9db0-ce50c1337359</id>
+                <link>
+                    <type>Album</type>
+                    <target>25cb0b07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Shinedown</title>
+                <text>Bully</text>
+                <sequenceNumber>4</sequenceNumber>
+                <image>
+                    <id>urn:uuid:2e5e8e9a-dab5-4419-9fbd-df35e8a3145c</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:f6cece03-3323-4b2c-8d78-2aca8a5b9103</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:8af09fc3-72d8-4768-afde-900236bb3b13</id>
+                <link>
+                    <type>Album</type>
+                    <target>110f0b07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Nightwish</title>
+                <text>Imaginaerum (Special Edition)</text>
+                <sequenceNumber>5</sequenceNumber>
+                <image>
+                    <id>urn:uuid:d1a8b22f-4d65-407f-bf35-1cc1900265cf</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:f2d9cdb4-9a9f-4970-ba5f-603ab20a3ef5</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:e8b1dadc-66d2-414e-ba4c-0de01869d748</id>
+                <link>
+                    <type>Album</type>
+                    <target>852b0c07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Yo Gotti</title>
+                <text>Live From The Kitchen</text>
+                <sequenceNumber>6</sequenceNumber>
+                <image>
+                    <id>urn:uuid:5e234623-2c2b-4dab-b41f-299ad55ac25c</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:3060ded5-ece6-4a58-b1f9-3b66296d5e22</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:d923e937-d550-4d39-a3c6-02c78a628dd7</id>
+                <link>
+                    <type>Album</type>
+                    <target>1eed0b07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Train</title>
+                <text>Drive By</text>
+                <sequenceNumber>7</sequenceNumber>
+                <image>
+                    <id>urn:uuid:b62e1399-21c3-4723-a911-ac3fdf72cc9d</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:e57078ac-602b-4bb4-8994-61a396f1942e</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:aebd9981-06bf-4661-8a3f-26ce13d43c5c</id>
+                <link>
+                    <type>Album</type>
+                    <target>ba660b07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Air</title>
+                <text>Seven Stars - Single</text>
+                <sequenceNumber>8</sequenceNumber>
+                <image>
+                    <id>urn:uuid:ed894825-7ae7-4a21-bbe8-97569760e22c</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:9388ff7c-a593-46f9-b70a-4979361e19ee</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:aafbd860-d796-4b83-9bd8-484ed08927e9</id>
+                <link>
+                    <type>Album</type>
+                    <target>78e10a07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Safetysuit</title>
+                <text>These Times</text>
+                <sequenceNumber>9</sequenceNumber>
+                <image>
+                    <id>urn:uuid:27a8eb10-b445-40d4-a9d8-1117eaa3be1e</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:5e44d8b7-631c-4abb-b1f5-286581a751a5</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:4f480850-9e98-4cac-a27b-ec416e0dd6dd</id>
+                <link>
+                    <type>Album</type>
+                    <target>0d790b07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>David Crowder Band</title>
+                <text>Give Us Rest or (A Requiem Mass in C [The Happiest of All Keys])</text>
+                <sequenceNumber>10</sequenceNumber>
+                <image>
+                    <id>urn:uuid:1852a630-7e98-4a33-bfb9-8a42ef98764f</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:fdcd021b-8299-4111-b33a-62ecebbda517</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:7df8ed20-b739-479b-bc54-6076511d0f3e</id>
+                <link>
+                    <type>Album</type>
+                    <target>d97c0d07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Jason Mraz</title>
+                <text>I Won't Give Up</text>
+                <sequenceNumber>11</sequenceNumber>
+                <image>
+                    <id>urn:uuid:025900ae-cc87-4059-97d3-0f944018e471</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:ffa40380-0579-42e6-83af-da5fc48af4e4</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:d60b11bf-be4d-4215-a21a-8e990584805b</id>
+                <link>
+                    <type>Album</type>
+                    <target>1d670b07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>The Little Willies</title>
+                <text>For The Good Times</text>
+                <sequenceNumber>12</sequenceNumber>
+                <image>
+                    <id>urn:uuid:5d30a614-2b20-4d43-a5bb-d3f513a24c55</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:12880136-f94b-40ff-929e-cbee99ce9bc6</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:2bdb1a93-e687-48e8-9c54-3ee287d7fc5c</id>
+                <link>
+                    <type>Album</type>
+                    <target>e9870c07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Taylor Swift</title>
+                <text>Safe &amp; Sound (from The Hunger Games Soundtrack)</text>
+                <sequenceNumber>13</sequenceNumber>
+                <image>
+                    <id>urn:uuid:49940743-5614-4f00-84c0-cd603c5daf33</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:9e770f60-8d91-4f33-a5f6-65aa6ee57552</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:6262fa7f-dbfc-4263-a7d3-123b7291c145</id>
+                <link>
+                    <type>Album</type>
+                    <target>f57c0907-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Cobra Starship</title>
+                <text>The Future's So Bright, I Gotta Wear Shades</text>
+                <sequenceNumber>14</sequenceNumber>
+                <image>
+                    <id>urn:uuid:3ab6addb-2eb2-4f85-842d-c1774490b292</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:11e9dcf7-7fff-40d4-8b55-a63ef1dd59de</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:f60a051f-ad95-4349-b61a-298eb1d0262b</id>
+                <link>
+                    <type>Album</type>
+                    <target>15470c07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>B.o.B</title>
+                <text>Play The Guitar (feat. André 3000)</text>
+                <sequenceNumber>15</sequenceNumber>
+                <image>
+                    <id>urn:uuid:53cd80d6-0ed5-4fdb-9b7c-1e82c759be2c</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:d804d57c-0180-46ee-a58c-f5f68b2c93a6</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:a8aba113-b0d6-4aa8-aca0-48c302054764</id>
+                <link>
+                    <type>Album</type>
+                    <target>69f80807-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Dev</title>
+                <text>Naked</text>
+                <sequenceNumber>16</sequenceNumber>
+                <image>
+                    <id>urn:uuid:89b58822-5af4-436e-be6c-548a2ba2d770</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:5c2cbc08-4adc-4a94-9360-ab15dbeaf299</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:d158d986-2c10-4b1c-b767-e815200c60e4</id>
+                <link>
+                    <type>Album</type>
+                    <target>f3b40707-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Young Jeezy</title>
+                <text>TM:103 Hustlerz Ambition (deluxe Parental Advisory)</text>
+                <sequenceNumber>17</sequenceNumber>
+                <image>
+                    <id>urn:uuid:41a94fff-db33-4a8d-8c81-a4d1509cd411</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:c9353d5e-8b72-433a-b9ab-6a8057202292</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:9bf348c6-d6e0-450c-813c-154d1fd1021d</id>
+                <link>
+                    <type>Album</type>
+                    <target>34370907-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Rebelution</title>
+                <text>Peace of Mind (Deluxe)</text>
+                <sequenceNumber>18</sequenceNumber>
+                <image>
+                    <id>urn:uuid:8b19d1c9-d39c-4149-b21a-023506deb835</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:63f56033-ef33-49ea-9e67-816a3157587d</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:9bf66eed-aa52-4f68-9764-f15a2886338f</id>
+                <link>
+                    <type>Album</type>
+                    <target>68ad0e07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Circa Survive</title>
+                <text>The Inuit Sessions</text>
+                <sequenceNumber>19</sequenceNumber>
+                <image>
+                    <id>urn:uuid:60eb0355-6cae-421d-bde3-0d2ae7dfdc00</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:24b7eab5-3cd4-42e5-9031-1139cf95c4ac</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:bc620957-339d-4c14-bffa-7aa6bc127b97</id>
+                <link>
+                    <type>Album</type>
+                    <target>d5cc0807-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Say Anything</title>
+                <text>Burn A Miracle</text>
+                <sequenceNumber>20</sequenceNumber>
+                <image>
+                    <id>urn:uuid:7f97d02d-2620-44c3-af4b-dea2e83f8a2a</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:81e05d14-6b82-4124-a8d4-8d3b30c52b82</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:e8a8490b-9e95-4f36-a410-ba8020aa292f</id>
+                <link>
+                    <type>Album</type>
+                    <target>a40b0b07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Joan Osborne</title>
+                <text>Shake Your Hips</text>
+                <sequenceNumber>21</sequenceNumber>
+                <image>
+                    <id>urn:uuid:ad469132-011e-48a6-b844-20773531fec3</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:d8249b72-a790-4cdb-8322-f83dd40ad3d7</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:d6baaee0-6fe4-4ea0-81db-cc7cda4650e9</id>
+                <link>
+                    <type>Album</type>
+                    <target>d00d0b07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Flo Rida</title>
+                <text>Wild Ones (feat. Sia)</text>
+                <sequenceNumber>22</sequenceNumber>
+                <image>
+                    <id>urn:uuid:a9308054-0f52-4d4b-8285-f088e8c12da7</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:39b674b8-b28c-4614-9e79-7a0c1ff06bd6</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:101bbdb2-dad7-44a3-ac4d-d346198653ca</id>
+                <link>
+                    <type>Album</type>
+                    <target>fed00807-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Common</title>
+                <text>The Dreamer, The Believer</text>
+                <sequenceNumber>23</sequenceNumber>
+                <image>
+                    <id>urn:uuid:9364add2-356a-4c6f-891c-64365a4d8eb4</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:1e80af42-c15e-4bef-9a48-2fc11dbed103</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:85ac558f-9fa8-42bd-b77e-329772a83d8d</id>
+                <link>
+                    <type>Album</type>
+                    <target>6aba0207-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>will.i.am</title>
+                <text>T.H.E (The Hardest Ever) (Parental Advisory)</text>
+                <sequenceNumber>24</sequenceNumber>
+                <image>
+                    <id>urn:uuid:4ad5c042-acb7-4cd7-b6e4-940804e7e10e</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:62c5ed92-32c4-4677-b075-a2a6726802cd</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:54e59a6b-5fbe-4608-b97b-5ea970abc1b2</id>
+                <link>
+                    <type>Album</type>
+                    <target>a1fc0807-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Roscoe Dash</title>
+                <text>J.U.I.C.E. EP (Parental Advisory)</text>
+                <sequenceNumber>25</sequenceNumber>
+                <image>
+                    <id>urn:uuid:4845545d-fc9d-4629-afbe-72489b7dd7cd</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:879bcdf1-e739-4544-95bf-e6c0cb0729a3</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:5a477593-e85c-4cc2-abb4-244522041b9f</id>
+                <link>
+                    <type>Album</type>
+                    <target>b10f0b07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Chuckie</title>
+                <text>Who Is Ready To Jump (Remixes)</text>
+                <sequenceNumber>26</sequenceNumber>
+                <image>
+                    <id>urn:uuid:15eaab1d-ceb5-45c2-9445-728e45453a25</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:35a89463-0d35-416c-828d-5061e480a34c</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:a2164d62-9444-43b8-917c-c5aace54a3b7</id>
+                <link>
+                    <type>Album</type>
+                    <target>e7d60b07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Rebecca Ferguson</title>
+                <text>Nothing's Real But Love</text>
+                <sequenceNumber>27</sequenceNumber>
+                <image>
+                    <id>urn:uuid:d4fc54ad-b454-4bf6-a18f-1a72ac4d44de</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:6a46170b-977d-4fe0-9310-9491fc7c9eea</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:cc46b1da-86e8-4400-962f-ff5745e20f25</id>
+                <link>
+                    <type>Album</type>
+                    <target>11940a07-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Jon McLaughlin</title>
+                <text>Summer Is Over feat. Sara Bareilles</text>
+                <sequenceNumber>28</sequenceNumber>
+                <image>
+                    <id>urn:uuid:a5f1602e-1454-458a-a3c6-ae17ff70c210</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:36fea974-1ba2-40d5-9993-c663c3f8af5c</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:3141bb0f-2122-4645-9429-9cd2551e74eb</id>
+                <link>
+                    <type>Album</type>
+                    <target>4a230307-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Chevelle</title>
+                <text>Hats Off To The Bull</text>
+                <sequenceNumber>29</sequenceNumber>
+                <image>
+                    <id>urn:uuid:9cf37067-0fa6-4fff-805e-9518cccf19df</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:83c9d477-1476-4b03-9bae-6e5f16ed2fc3</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:6f980bb5-9ef7-482a-9b9e-a89d44037d06</id>
+                <link>
+                    <type>Album</type>
+                    <target>44fd0407-0100-11db-89ca-0019b92a3933</target>
+                </link>
+                <title>Korn</title>
+                <text>The Path Of Totality (Special Edition)</text>
+                <sequenceNumber>30</sequenceNumber>
+                <image>
+                    <id>urn:uuid:2977fec2-f6ab-4f2a-8492-0b0f3382e3a2</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:0aca2249-168f-4270-8b6c-5dcd41c28e6d</id>
+                </backgroundImage>
+            </editorialItem>
+        </editorialItems>
+        <albums>
+            <album>
+                <id>urn:uuid:ed3e0c07-0100-11db-89ca-0019b92a3933</id>
+                <title>Simple Song</title>
+                <sortTitle>Simple Song</sortTitle>
+                <label>Aural Apothecary/Columbia</label>
+                <releaseDate>2012-01-10T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:ed3e0c07-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>835584</playRank>
+                <playCount>51</playCount>
+                <isExplicit>False</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:19a30600-0600-11db-89ca-0019b92a3933</id>
+                    <name>The Shins</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>pop</id>
+                    <title>Pop</title>
+                </primaryGenre>
+            </album>
+            <album>
+                <id>urn:uuid:61d00a07-0100-11db-89ca-0019b92a3933</id>
+                <title>Original (Parental Advisory)</title>
+                <sortTitle>Original (Parental Advisory)</sortTitle>
+                <label>Cash Money</label>
+                <labelOwner>Universal Music Group</labelOwner>
+                <releaseDate>2012-01-16T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:61d00a07-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>26454016</playRank>
+                <playCount>1954</playCount>
+                <isExplicit>True</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:a5290200-0600-11db-89ca-0019b92a3933</id>
+                    <name>Mystikal</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>hipHop</id>
+                    <title>Hip Hop</title>
+                </primaryGenre>
+                <rights>
+                    <right>
+                        <providerCode>118149217:MP3_DOWNLOAD_UENC_320kb_070</providerCode>
+                        <paymentTypes>
+                            <paymentType>Microsoft Points</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:61d00a07-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>100</price>
+                        <priceCurrencyCode>MPT</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                    </right>
+                </rights>
+            </album>
+            <album>
+                <id>urn:uuid:0fe10b07-0100-11db-89ca-0019b92a3933</id>
+                <title>Stupid Hoe (Parental Advisory)</title>
+                <sortTitle>Stupid Hoe (Parental Advisory)</sortTitle>
+                <label>Cash Money</label>
+                <labelOwner>Universal Music Group</labelOwner>
+                <releaseDate>2011-12-29T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:0fe10b07-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>24309760</playRank>
+                <playCount>1773</playCount>
+                <isExplicit>True</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:0a051000-0600-11db-89ca-0019b92a3933</id>
+                    <name>Nicki Minaj</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>hipHop</id>
+                    <title>Hip Hop</title>
+                </primaryGenre>
+                <rights>
+                    <right>
+                        <providerCode>118219023:MP3_DOWNLOAD_UENC_320kb_070</providerCode>
+                        <paymentTypes>
+                            <paymentType>Microsoft Points</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:0fe10b07-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>100</price>
+                        <priceCurrencyCode>MPT</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                    </right>
+                </rights>
+            </album>
+            <album>
+                <id>urn:uuid:25cb0b07-0100-11db-89ca-0019b92a3933</id>
+                <title>Bully</title>
+                <sortTitle>Bully</sortTitle>
+                <label>Atlantic Records</label>
+                <labelOwner>Warner Music</labelOwner>
+                <releaseDate>2012-01-03T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:25cb0b07-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>87519232</playRank>
+                <playCount>6806</playCount>
+                <isExplicit>False</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:b4880800-0600-11db-89ca-0019b92a3933</id>
+                    <name>Shinedown</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>rock</id>
+                    <title>Rock</title>
+                </primaryGenre>
+                <rights>
+                    <right>
+                        <providerCode>118213413:MP3_DOWNLOAD_UENC_256kb_075</providerCode>
+                        <paymentTypes>
+                            <paymentType>Microsoft Points</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:25cb0b07-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>100</price>
+                        <priceCurrencyCode>MPT</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                    </right>
+                </rights>
+            </album>
+            <album>
+                <id>urn:uuid:110f0b07-0100-11db-89ca-0019b92a3933</id>
+                <title>Imaginaerum (Special Edition)</title>
+                <sortTitle>Imaginaerum (Special Edition)</sortTitle>
+                <label>Roadrunner Records</label>
+                <labelOwner>Warner Music</labelOwner>
+                <releaseDate>2011-12-02T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:110f0b07-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>27344896</playRank>
+                <playCount>1669</playCount>
+                <isExplicit>False</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:bdb10500-0600-11db-89ca-0019b92a3933</id>
+                    <name>Nightwish</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>rock</id>
+                    <title>Rock</title>
+                </primaryGenre>
+                <rights>
+                    <right>
+                        <providerCode>118165265:MP3_DOWNLOAD_UENC_256kb_075</providerCode>
+                        <paymentTypes>
+                            <paymentType>Microsoft Points</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:110f0b07-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>1600</price>
+                        <priceCurrencyCode>MPT</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                    </right>
+                    <right>
+                        <providerCode>118165265:MP3_DOWNLOAD_UENC_256kb_075</providerCode>
+                        <paymentTypes>
+                            <paymentType>Credit Card</paymentType>
+                            <paymentType>Mobile Operator</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:110f0b07-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>19.99</price>
+                        <priceCurrencyCode>USD</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                        <displayPrice>$19.99</displayPrice>
+                    </right>
+                </rights>
+            </album>
+            <album>
+                <id>urn:uuid:852b0c07-0100-11db-89ca-0019b92a3933</id>
+                <title>Live From The Kitchen</title>
+                <sortTitle>Live From The Kitchen</sortTitle>
+                <label>RCA Records Label</label>
+                <labelOwner>SONY BMG Music Entertainment Ltd</labelOwner>
+                <releaseDate>2012-01-09T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:852b0c07-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>35373056</playRank>
+                <playCount>2159</playCount>
+                <isExplicit>True</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:46e30600-0600-11db-89ca-0019b92a3933</id>
+                    <name>Yo Gotti</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>hipHop</id>
+                    <title>Hip Hop</title>
+                </primaryGenre>
+                <rights>
+                    <right>
+                        <providerCode>118238085:MP3_DOWNLOAD_UENC_256kb_075</providerCode>
+                        <paymentTypes>
+                            <paymentType>Microsoft Points</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:852b0c07-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>800</price>
+                        <priceCurrencyCode>MPT</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                    </right>
+                    <right>
+                        <providerCode>118238085:MP3_DOWNLOAD_UENC_256kb_075</providerCode>
+                        <paymentTypes>
+                            <paymentType>Credit Card</paymentType>
+                            <paymentType>Mobile Operator</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:852b0c07-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>9.99</price>
+                        <priceCurrencyCode>USD</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                        <displayPrice>$9.99</displayPrice>
+                    </right>
+                </rights>
+            </album>
+            <album>
+                <id>urn:uuid:1eed0b07-0100-11db-89ca-0019b92a3933</id>
+                <title>Drive By</title>
+                <sortTitle>Drive By</sortTitle>
+                <label>Columbia</label>
+                <labelOwner>SONY BMG Music Entertainment Ltd</labelOwner>
+                <releaseDate>2012-01-10T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:1eed0b07-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>13369344</playRank>
+                <playCount>816</playCount>
+                <isExplicit>False</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:e7050200-0600-11db-89ca-0019b92a3933</id>
+                    <name>Train</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>pop</id>
+                    <title>Pop</title>
+                </primaryGenre>
+                <rights>
+                    <right>
+                        <providerCode>118222110:MP3_DOWNLOAD_UENC_256kb_075</providerCode>
+                        <paymentTypes>
+                            <paymentType>Microsoft Points</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:1eed0b07-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>100</price>
+                        <priceCurrencyCode>MPT</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                    </right>
+                </rights>
+            </album>
+            <album>
+                <id>urn:uuid:ba660b07-0100-11db-89ca-0019b92a3933</id>
+                <title>Seven Stars - Single</title>
+                <sortTitle>Seven Stars - Single</sortTitle>
+                <label>ASTRALWERKS</label>
+                <labelOwner>EMI Music North America</labelOwner>
+                <releaseDate>2012-01-09T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:ba660b07-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>5685248</playRank>
+                <playCount>347</playCount>
+                <isExplicit>False</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:fc6b0300-0600-11db-89ca-0019b92a3933</id>
+                    <name>Air</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>electronicDance</id>
+                    <title>Electronic / Dance</title>
+                </primaryGenre>
+                <rights>
+                    <right>
+                        <providerCode>118187706:MP3_DOWNLOAD_UENC_320kb_070</providerCode>
+                        <paymentTypes>
+                            <paymentType>Microsoft Points</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:ba660b07-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>100</price>
+                        <priceCurrencyCode>MPT</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                    </right>
+                </rights>
+            </album>
+            <album>
+                <id>urn:uuid:78e10a07-0100-11db-89ca-0019b92a3933</id>
+                <title>These Times</title>
+                <sortTitle>These Times</sortTitle>
+                <label>Motown</label>
+                <labelOwner>Universal Music Group</labelOwner>
+                <releaseDate>2012-01-09T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:78e10a07-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>31932416</playRank>
+                <playCount>1949</playCount>
+                <isExplicit>False</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:68d10f00-0600-11db-89ca-0019b92a3933</id>
+                    <name>Safetysuit</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>rock</id>
+                    <title>Rock</title>
+                </primaryGenre>
+                <rights>
+                    <right>
+                        <providerCode>118153592:MP3_DOWNLOAD_UENC_320kb_070</providerCode>
+                        <paymentTypes>
+                            <paymentType>Microsoft Points</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:78e10a07-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>640</price>
+                        <priceCurrencyCode>MPT</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                    </right>
+                    <right>
+                        <providerCode>118153592:MP3_DOWNLOAD_UENC_320kb_070</providerCode>
+                        <paymentTypes>
+                            <paymentType>Credit Card</paymentType>
+                            <paymentType>Mobile Operator</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:78e10a07-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>7.99</price>
+                        <priceCurrencyCode>USD</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                        <displayPrice>$7.99</displayPrice>
+                    </right>
+                </rights>
+            </album>
+            <album>
+                <id>urn:uuid:0d790b07-0100-11db-89ca-0019b92a3933</id>
+                <title>Give Us Rest or (A Requiem Mass in C [The Happiest of All Keys])</title>
+                <sortTitle>Give Us Rest or (A Requiem Mass in C [The Happiest of All Keys])</sortTitle>
+                <label>SPARROW / SIXSTEPS</label>
+                <labelOwner>EMI Music North America</labelOwner>
+                <releaseDate>2012-01-10T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:0d790b07-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>39698432</playRank>
+                <playCount>2423</playCount>
+                <isExplicit>False</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:f2700800-0600-11db-89ca-0019b92a3933</id>
+                    <name>David Crowder Band</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>christianGospel</id>
+                    <title>Christian / Gospel</title>
+                </primaryGenre>
+                <rights>
+                    <right>
+                        <providerCode>118192397:MP3_DOWNLOAD_UENC_320kb_070</providerCode>
+                        <paymentTypes>
+                            <paymentType>Microsoft Points</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:0d790b07-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>1120</price>
+                        <priceCurrencyCode>MPT</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                    </right>
+                    <right>
+                        <providerCode>118192397:MP3_DOWNLOAD_UENC_320kb_070</providerCode>
+                        <paymentTypes>
+                            <paymentType>Credit Card</paymentType>
+                            <paymentType>Mobile Operator</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:0d790b07-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>13.99</price>
+                        <priceCurrencyCode>USD</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                        <displayPrice>$13.99</displayPrice>
+                    </right>
+                </rights>
+            </album>
+            <album>
+                <id>urn:uuid:d97c0d07-0100-11db-89ca-0019b92a3933</id>
+                <title>I Won't Give Up</title>
+                <sortTitle>I Won't Give Up</sortTitle>
+                <label>Atlantic Records</label>
+                <labelOwner>Warner Music</labelOwner>
+                <releaseDate>2012-01-03T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:d97c0d07-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>179449856</playRank>
+                <playCount>15624</playCount>
+                <isExplicit>False</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:de490800-0600-11db-89ca-0019b92a3933</id>
+                    <name>Jason Mraz</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>pop</id>
+                    <title>Pop</title>
+                </primaryGenre>
+                <rights>
+                    <right>
+                        <providerCode>118324441:MP3_DOWNLOAD_UENC_256kb_075</providerCode>
+                        <paymentTypes>
+                            <paymentType>Microsoft Points</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:d97c0d07-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>100</price>
+                        <priceCurrencyCode>MPT</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                    </right>
+                </rights>
+            </album>
+            <album>
+                <id>urn:uuid:1d670b07-0100-11db-89ca-0019b92a3933</id>
+                <title>For The Good Times</title>
+                <sortTitle>For The Good Times</sortTitle>
+                <label>BLUE NOTE</label>
+                <labelOwner>EMI Music North America</labelOwner>
+                <releaseDate>2012-01-10T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:1d670b07-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>13942784</playRank>
+                <playCount>851</playCount>
+                <isExplicit>False</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:2d8e0b00-0600-11db-89ca-0019b92a3933</id>
+                    <name>The Little Willies</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>country</id>
+                    <title>Country</title>
+                </primaryGenre>
+                <rights>
+                    <right>
+                        <providerCode>118187805:MP3_DOWNLOAD_UENC_320kb_070</providerCode>
+                        <paymentTypes>
+                            <paymentType>Microsoft Points</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:1d670b07-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>800</price>
+                        <priceCurrencyCode>MPT</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                    </right>
+                    <right>
+                        <providerCode>118187805:MP3_DOWNLOAD_UENC_320kb_070</providerCode>
+                        <paymentTypes>
+                            <paymentType>Credit Card</paymentType>
+                            <paymentType>Mobile Operator</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:1d670b07-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>9.99</price>
+                        <priceCurrencyCode>USD</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                        <displayPrice>$9.99</displayPrice>
+                    </right>
+                </rights>
+            </album>
+            <album>
+                <id>urn:uuid:e9870c07-0100-11db-89ca-0019b92a3933</id>
+                <title>Safe &amp; Sound (from The Hunger Games Soundtrack)</title>
+                <sortTitle>Safe &amp; Sound (from The Hunger Games Soundtrack)</sortTitle>
+                <label>Universal Records</label>
+                <labelOwner>Universal Music Group</labelOwner>
+                <releaseDate>2012-01-03T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:e9870c07-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>176078848</playRank>
+                <playCount>14712</playCount>
+                <isExplicit>False</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:51770c00-0600-11db-89ca-0019b92a3933</id>
+                    <name>Taylor Swift</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>pop</id>
+                    <title>Pop</title>
+                </primaryGenre>
+                <rights>
+                    <right>
+                        <providerCode>118261737:MP3_DOWNLOAD_UENC_320kb_070</providerCode>
+                        <paymentTypes>
+                            <paymentType>Microsoft Points</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:e9870c07-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>100</price>
+                        <priceCurrencyCode>MPT</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                    </right>
+                </rights>
+            </album>
+            <album>
+                <id>urn:uuid:f57c0907-0100-11db-89ca-0019b92a3933</id>
+                <title>The Future's So Bright, I Gotta Wear Shades</title>
+                <sortTitle>The Future's So Bright, I Gotta Wear Shades</sortTitle>
+                <label>Manimal Vinyl</label>
+                <releaseDate>2012-01-03T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:f57c0907-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>51478528</playRank>
+                <playCount>4697</playCount>
+                <isExplicit>False</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:1f8c0c00-0600-11db-89ca-0019b92a3933</id>
+                    <name>Cobra Starship</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>electronicDance</id>
+                    <title>Electronic / Dance</title>
+                </primaryGenre>
+            </album>
+            <album>
+                <id>urn:uuid:15470c07-0100-11db-89ca-0019b92a3933</id>
+                <title>Play The Guitar (feat. André 3000)</title>
+                <sortTitle>Play The Guitar (feat. André 3000)</sortTitle>
+                <label>Rebel Rock/Grand Hustle/Atlantic</label>
+                <labelOwner>Warner Music</labelOwner>
+                <releaseDate>2011-12-27T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:15470c07-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>209512448</playRank>
+                <playCount>26001</playCount>
+                <isExplicit>True</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:cd220e00-0600-11db-89ca-0019b92a3933</id>
+                    <name>B.o.B</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>hipHop</id>
+                    <title>Hip Hop</title>
+                </primaryGenre>
+                <rights>
+                    <right>
+                        <providerCode>118245141:MP3_DOWNLOAD_UENC_256kb_075</providerCode>
+                        <paymentTypes>
+                            <paymentType>Microsoft Points</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:15470c07-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>100</price>
+                        <priceCurrencyCode>MPT</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                    </right>
+                </rights>
+            </album>
+            <album>
+                <id>urn:uuid:69f80807-0100-11db-89ca-0019b92a3933</id>
+                <title>Naked</title>
+                <sortTitle>Naked</sortTitle>
+                <label>Universal Records</label>
+                <labelOwner>Universal Music Group</labelOwner>
+                <releaseDate>2012-01-09T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:69f80807-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>127461376</playRank>
+                <playCount>12833</playCount>
+                <isExplicit>False</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:77cc0500-0600-11db-89ca-0019b92a3933</id>
+                    <name>Dev</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>pop</id>
+                    <title>Pop</title>
+                </primaryGenre>
+                <rights>
+                    <right>
+                        <providerCode>118028393:MP3_DOWNLOAD_UENC_320kb_070</providerCode>
+                        <paymentTypes>
+                            <paymentType>Microsoft Points</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:69f80807-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>100</price>
+                        <priceCurrencyCode>MPT</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                    </right>
+                </rights>
+            </album>
+            <album>
+                <id>urn:uuid:f3b40707-0100-11db-89ca-0019b92a3933</id>
+                <title>TM:103 Hustlerz Ambition (deluxe Parental Advisory)</title>
+                <sortTitle>TM:103 Hustlerz Ambition (deluxe Parental Advisory)</sortTitle>
+                <label>Def Jam Records</label>
+                <labelOwner>Universal Music Group</labelOwner>
+                <releaseDate>2011-12-20T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:f3b40707-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>2250708736</playRank>
+                <playCount>373384</playCount>
+                <isExplicit>True</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:e5c50900-0600-11db-89ca-0019b92a3933</id>
+                    <name>Young Jeezy</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>hipHop</id>
+                    <title>Hip Hop</title>
+                </primaryGenre>
+                <rights>
+                    <right>
+                        <providerCode>117945587:MP3_DOWNLOAD_UENC_320kb_070</providerCode>
+                        <paymentTypes>
+                            <paymentType>Microsoft Points</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:f3b40707-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>1280</price>
+                        <priceCurrencyCode>MPT</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                    </right>
+                    <right>
+                        <providerCode>117945587:MP3_DOWNLOAD_UENC_320kb_070</providerCode>
+                        <paymentTypes>
+                            <paymentType>Credit Card</paymentType>
+                            <paymentType>Mobile Operator</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:f3b40707-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>15.99</price>
+                        <priceCurrencyCode>USD</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                        <displayPrice>$15.99</displayPrice>
+                    </right>
+                </rights>
+            </album>
+            <album>
+                <id>urn:uuid:34370907-0100-11db-89ca-0019b92a3933</id>
+                <title>Peace of Mind (Deluxe)</title>
+                <sortTitle>Peace of Mind (Deluxe)</sortTitle>
+                <label>87 Music/Controlled Substance Sounds Labs</label>
+                <labelOwner>IODA</labelOwner>
+                <releaseDate>2012-01-10T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:34370907-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>9863168</playRank>
+                <playCount>602</playCount>
+                <isExplicit>False</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:c68e0e00-0600-11db-89ca-0019b92a3933</id>
+                    <name>Rebelution</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>reggaeDancehall</id>
+                    <title>Reggae / Dancehall</title>
+                </primaryGenre>
+                <rights>
+                    <right>
+                        <providerCode>118044468:MP3_DOWNLOAD_UENC_320kb_070</providerCode>
+                        <paymentTypes>
+                            <paymentType>Microsoft Points</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:34370907-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>720</price>
+                        <priceCurrencyCode>MPT</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                    </right>
+                    <right>
+                        <providerCode>118044468:MP3_DOWNLOAD_UENC_320kb_070</providerCode>
+                        <paymentTypes>
+                            <paymentType>Credit Card</paymentType>
+                            <paymentType>Mobile Operator</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:34370907-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>8.99</price>
+                        <priceCurrencyCode>USD</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                        <displayPrice>$8.99</displayPrice>
+                    </right>
+                </rights>
+            </album>
+            <album>
+                <id>urn:uuid:68ad0e07-0100-11db-89ca-0019b92a3933</id>
+                <title>The Inuit Sessions</title>
+                <sortTitle>The Inuit Sessions</sortTitle>
+                <label>EQUAL VISION RECORDS</label>
+                <labelOwner>IODA</labelOwner>
+                <releaseDate>2005-02-08T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:68ad0e07-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>671744</playRank>
+                <playCount>41</playCount>
+                <isExplicit>False</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:d0aa0a00-0600-11db-89ca-0019b92a3933</id>
+                    <name>Circa Survive</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>rock</id>
+                    <title>Rock</title>
+                </primaryGenre>
+                <rights>
+                    <right>
+                        <providerCode>118402408:MP3_DOWNLOAD_UENC_320kb_070</providerCode>
+                        <paymentTypes>
+                            <paymentType>Microsoft Points</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:68ad0e07-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>360</price>
+                        <priceCurrencyCode>MPT</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                    </right>
+                    <right>
+                        <providerCode>118402408:MP3_DOWNLOAD_UENC_320kb_070</providerCode>
+                        <paymentTypes>
+                            <paymentType>Credit Card</paymentType>
+                            <paymentType>Mobile Operator</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:68ad0e07-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>4.99</price>
+                        <priceCurrencyCode>USD</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                        <displayPrice>$4.99</displayPrice>
+                    </right>
+                </rights>
+            </album>
+            <album>
+                <id>urn:uuid:d5cc0807-0100-11db-89ca-0019b92a3933</id>
+                <title>Burn A Miracle</title>
+                <sortTitle>Burn A Miracle</sortTitle>
+                <label>EQUAL VISION RECORDS</label>
+                <labelOwner>Warner Music</labelOwner>
+                <releaseDate>2011-12-20T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:d5cc0807-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>15554560</playRank>
+                <playCount>2470</playCount>
+                <isExplicit>False</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:a3310a00-0600-11db-89ca-0019b92a3933</id>
+                    <name>Say Anything</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>rock</id>
+                    <title>Rock</title>
+                </primaryGenre>
+                <rights>
+                    <right>
+                        <providerCode>118017237:MP3_DOWNLOAD_UENC_256kb_075</providerCode>
+                        <paymentTypes>
+                            <paymentType>Microsoft Points</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:d5cc0807-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>100</price>
+                        <priceCurrencyCode>MPT</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                    </right>
+                </rights>
+            </album>
+            <album>
+                <id>urn:uuid:a40b0b07-0100-11db-89ca-0019b92a3933</id>
+                <title>Shake Your Hips</title>
+                <sortTitle>Shake Your Hips</sortTitle>
+                <label>Saguaro Road Records</label>
+                <releaseDate>2012-01-10T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:a40b0b07-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>524288</playRank>
+                <playCount>32</playCount>
+                <isExplicit>False</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:9d2f0200-0600-11db-89ca-0019b92a3933</id>
+                    <name>Joan Osborne</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>pop</id>
+                    <title>Pop</title>
+                </primaryGenre>
+            </album>
+            <album>
+                <id>urn:uuid:d00d0b07-0100-11db-89ca-0019b92a3933</id>
+                <title>Wild Ones (feat. Sia)</title>
+                <sortTitle>Wild Ones (feat. Sia)</sortTitle>
+                <label>Poe Boy/Atlantic</label>
+                <labelOwner>Warner Music</labelOwner>
+                <releaseDate>2011-12-19T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:d00d0b07-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>187926528</playRank>
+                <playCount>22434</playCount>
+                <isExplicit>False</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:c4160e00-0600-11db-89ca-0019b92a3933</id>
+                    <name>Flo Rida</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>hipHop</id>
+                    <title>Hip Hop</title>
+                </primaryGenre>
+                <rights>
+                    <right>
+                        <providerCode>118164944:MP3_DOWNLOAD_UENC_256kb_075</providerCode>
+                        <paymentTypes>
+                            <paymentType>Microsoft Points</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:d00d0b07-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>100</price>
+                        <priceCurrencyCode>MPT</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                    </right>
+                </rights>
+            </album>
+            <album>
+                <id>urn:uuid:fed00807-0100-11db-89ca-0019b92a3933</id>
+                <title>The Dreamer, The Believer</title>
+                <sortTitle>The Dreamer, The Believer</sortTitle>
+                <label>Think Common/Warner Bros.</label>
+                <labelOwner>Warner Music</labelOwner>
+                <releaseDate>2011-12-16T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:fed00807-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>572293376</playRank>
+                <playCount>102445</playCount>
+                <isExplicit>True</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:08380400-0600-11db-89ca-0019b92a3933</id>
+                    <name>Common</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>hipHop</id>
+                    <title>Hip Hop</title>
+                </primaryGenre>
+                <rights>
+                    <right>
+                        <providerCode>118018302:MP3_DOWNLOAD_UENC_256kb_075</providerCode>
+                        <paymentTypes>
+                            <paymentType>Microsoft Points</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:fed00807-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>1040</price>
+                        <priceCurrencyCode>MPT</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                    </right>
+                    <right>
+                        <providerCode>118018302:MP3_DOWNLOAD_UENC_256kb_075</providerCode>
+                        <paymentTypes>
+                            <paymentType>Credit Card</paymentType>
+                            <paymentType>Mobile Operator</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:fed00807-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>12.99</price>
+                        <priceCurrencyCode>USD</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                        <displayPrice>$12.99</displayPrice>
+                    </right>
+                </rights>
+            </album>
+            <album>
+                <id>urn:uuid:6aba0207-0100-11db-89ca-0019b92a3933</id>
+                <title>T.H.E (The Hardest Ever) (Parental Advisory)</title>
+                <sortTitle>T.H.E (The Hardest Ever) (Parental Advisory)</sortTitle>
+                <label>Interscope</label>
+                <labelOwner>Universal Music Group</labelOwner>
+                <releaseDate>2012-01-03T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:6aba0207-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>119742336</playRank>
+                <playCount>32037</playCount>
+                <isExplicit>True</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:7b5e0500-0600-11db-89ca-0019b92a3933</id>
+                    <name>will.i.am</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>pop</id>
+                    <title>Pop</title>
+                </primaryGenre>
+                <rights>
+                    <right>
+                        <providerCode>117619306:MP3_DOWNLOAD_UENC_320kb_070</providerCode>
+                        <paymentTypes>
+                            <paymentType>Microsoft Points</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:6aba0207-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>100</price>
+                        <priceCurrencyCode>MPT</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                    </right>
+                </rights>
+            </album>
+            <album>
+                <id>urn:uuid:a1fc0807-0100-11db-89ca-0019b92a3933</id>
+                <title>J.U.I.C.E. EP (Parental Advisory)</title>
+                <sortTitle>J.U.I.C.E. EP (Parental Advisory)</sortTitle>
+                <label>Music Line/Zone 4/Interscope</label>
+                <labelOwner>Universal Music Group</labelOwner>
+                <releaseDate>2011-12-20T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:a1fc0807-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>278027264</playRank>
+                <playCount>46948</playCount>
+                <isExplicit>True</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:0f2b2000-0600-11db-89ca-0019b92a3933</id>
+                    <name>Roscoe Dash</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>hipHop</id>
+                    <title>Hip Hop</title>
+                </primaryGenre>
+                <rights>
+                    <right>
+                        <providerCode>118029473:MP3_DOWNLOAD_UENC_320kb_070</providerCode>
+                        <paymentTypes>
+                            <paymentType>Microsoft Points</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:a1fc0807-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>560</price>
+                        <priceCurrencyCode>MPT</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                    </right>
+                    <right>
+                        <providerCode>118029473:MP3_DOWNLOAD_UENC_320kb_070</providerCode>
+                        <paymentTypes>
+                            <paymentType>Credit Card</paymentType>
+                            <paymentType>Mobile Operator</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:a1fc0807-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>6.99</price>
+                        <priceCurrencyCode>USD</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                        <displayPrice>$6.99</displayPrice>
+                    </right>
+                </rights>
+            </album>
+            <album>
+                <id>urn:uuid:b10f0b07-0100-11db-89ca-0019b92a3933</id>
+                <title>Who Is Ready To Jump (Remixes)</title>
+                <sortTitle>Who Is Ready To Jump (Remixes)</sortTitle>
+                <label>Big Beat Records/Atlantic</label>
+                <labelOwner>Warner Music</labelOwner>
+                <releaseDate>2011-12-12T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:b10f0b07-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>2162688</playRank>
+                <playCount>132</playCount>
+                <isExplicit>True</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:d0810400-0600-11db-89ca-0019b92a3933</id>
+                    <name>Chuckie</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>electronicDance</id>
+                    <title>Electronic / Dance</title>
+                </primaryGenre>
+                <rights>
+                    <right>
+                        <providerCode>118165425:MP3_DOWNLOAD_UENC_256kb_075</providerCode>
+                        <paymentTypes>
+                            <paymentType>Microsoft Points</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:b10f0b07-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>480</price>
+                        <priceCurrencyCode>MPT</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                    </right>
+                    <right>
+                        <providerCode>118165425:MP3_DOWNLOAD_UENC_256kb_075</providerCode>
+                        <paymentTypes>
+                            <paymentType>Credit Card</paymentType>
+                            <paymentType>Mobile Operator</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:b10f0b07-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>5.99</price>
+                        <priceCurrencyCode>USD</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                        <displayPrice>$5.99</displayPrice>
+                    </right>
+                </rights>
+            </album>
+            <album>
+                <id>urn:uuid:e7d60b07-0100-11db-89ca-0019b92a3933</id>
+                <title>Nothing's Real But Love</title>
+                <sortTitle>Nothing's Real But Love</sortTitle>
+                <label>RCA Records Label</label>
+                <labelOwner>SONY BMG Music Entertainment Ltd</labelOwner>
+                <releaseDate>2012-01-10T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:e7d60b07-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>638976</playRank>
+                <playCount>39</playCount>
+                <isExplicit>False</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:578e3f00-0200-11db-89ca-0019b92a3933</id>
+                    <name>Rebecca Ferguson</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>pop</id>
+                    <title>Pop</title>
+                </primaryGenre>
+                <rights>
+                    <right>
+                        <providerCode>118216423:MP3_DOWNLOAD_UENC_256kb_075</providerCode>
+                        <paymentTypes>
+                            <paymentType>Microsoft Points</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:e7d60b07-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>100</price>
+                        <priceCurrencyCode>MPT</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                    </right>
+                </rights>
+            </album>
+            <album>
+                <id>urn:uuid:11940a07-0100-11db-89ca-0019b92a3933</id>
+                <title>Summer Is Over feat. Sara Bareilles</title>
+                <sortTitle>Summer Is Over feat. Sara Bareilles</sortTitle>
+                <label>Razor &amp; Tie Label</label>
+                <labelOwner>SONY BMG Music Entertainment Ltd</labelOwner>
+                <releaseDate>2012-01-10T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:11940a07-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>458752</playRank>
+                <playCount>28</playCount>
+                <isExplicit>False</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:318f0d00-0600-11db-89ca-0019b92a3933</id>
+                    <name>Jon McLaughlin</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>pop</id>
+                    <title>Pop</title>
+                </primaryGenre>
+                <rights>
+                    <right>
+                        <providerCode>118133777:MP3_DOWNLOAD_UENC_256kb_075</providerCode>
+                        <paymentTypes>
+                            <paymentType>Microsoft Points</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:11940a07-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>100</price>
+                        <priceCurrencyCode>MPT</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                    </right>
+                </rights>
+            </album>
+            <album>
+                <id>urn:uuid:4a230307-0100-11db-89ca-0019b92a3933</id>
+                <title>Hats Off To The Bull</title>
+                <sortTitle>Hats Off To The Bull</sortTitle>
+                <label>EPIC</label>
+                <labelOwner>SONY BMG Music Entertainment Ltd</labelOwner>
+                <releaseDate>2011-12-02T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:4a230307-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>658732032</playRank>
+                <playCount>215687</playCount>
+                <isExplicit>False</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:2aa70500-0600-11db-89ca-0019b92a3933</id>
+                    <name>Chevelle</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>rock</id>
+                    <title>Rock</title>
+                </primaryGenre>
+                <rights>
+                    <right>
+                        <providerCode>117646154:MP3_DOWNLOAD_UENC_256kb_075</providerCode>
+                        <paymentTypes>
+                            <paymentType>Microsoft Points</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:4a230307-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>800</price>
+                        <priceCurrencyCode>MPT</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                    </right>
+                    <right>
+                        <providerCode>117646154:MP3_DOWNLOAD_UENC_256kb_075</providerCode>
+                        <paymentTypes>
+                            <paymentType>Credit Card</paymentType>
+                            <paymentType>Mobile Operator</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:4a230307-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>9.99</price>
+                        <priceCurrencyCode>USD</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                        <displayPrice>$9.99</displayPrice>
+                    </right>
+                </rights>
+            </album>
+            <album>
+                <id>urn:uuid:44fd0407-0100-11db-89ca-0019b92a3933</id>
+                <title>The Path Of Totality (Special Edition)</title>
+                <sortTitle>The Path Of Totality (Special Edition)</sortTitle>
+                <label>Roadrunner Records</label>
+                <labelOwner>Warner Music</labelOwner>
+                <releaseDate>2011-11-21T00:00:00Z</releaseDate>
+                <image>
+                    <id>urn:uuid:44fd0407-0300-11db-89ca-0019b92a3933</id>
+                </image>
+                <playRank>775202048</playRank>
+                <playCount>262917</playCount>
+                <isExplicit>True</isExplicit>
+                <isActionable>True</isActionable>
+                <isPremium>False</isPremium>
+                <primaryArtist>
+                    <id>urn:uuid:13340200-0600-11db-89ca-0019b92a3933</id>
+                    <name>Korn</name>
+                </primaryArtist>
+                <primaryGenre>
+                    <id>rock</id>
+                    <title>Rock</title>
+                </primaryGenre>
+                <rights>
+                    <right>
+                        <providerCode>117767492:MP3_DOWNLOAD_UENC_256kb_075</providerCode>
+                        <paymentTypes>
+                            <paymentType>Microsoft Points</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:44fd0407-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>1040</price>
+                        <priceCurrencyCode>MPT</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                    </right>
+                    <right>
+                        <providerCode>117767492:MP3_DOWNLOAD_UENC_256kb_075</providerCode>
+                        <paymentTypes>
+                            <paymentType>Credit Card</paymentType>
+                            <paymentType>Mobile Operator</paymentType>
+                        </paymentTypes>
+                        <offerId>urn:uuid:44fd0407-2102-11db-89ca-0019b92a3933</offerId>
+                        <price>12.99</price>
+                        <priceCurrencyCode>USD</priceCurrencyCode>
+                        <licenseRight>AlbumPurchase</licenseRight>
+                        <audioEncoding>MP3</audioEncoding>
+                        <displayPrice>$12.99</displayPrice>
+                    </right>
+                </rights>
+            </album>
+        </albums>
+    </a:entry>
+    <a:entry>
+        <a:link rel="alternate" type="application/atom+xml" href="/v3.2/en-US/music/collection/features/8ab92c98-26a3-4050-bc27-05286ef025bf" />
+        <a:updated>2012-01-12T12:54:25.9072634Z</a:updated>
+        <a:title type="text">List Of Items</a:title>
+        <a:id>urn:uuid:8ab92c98-26a3-4050-bc27-05286ef025bf</a:id>
+        <index>3</index>
+        <link>
+            <type>FeatureCollection</type>
+            <target>8AB92C98-26A3-4050-BC27-05286EF025BF</target>
+        </link>
+        <editorialItems>
+            <editorialItem>
+                <id>urn:uuid:8c7249b3-df66-411e-a838-7e672068c156</id>
+                <link>
+                    <type>Hub</type>
+                    <target>peopleschoiceawards2012music</target>
+                </link>
+                <title>People's Choice</title>
+                <text>Music nominees                        </text>
+                <sequenceNumber>1</sequenceNumber>
+                <image>
+                    <id>urn:uuid:c9b04fa6-f6c5-4859-8446-cdc10323f5f8</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:00000000-0000-0000-0000-000000000000</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:f0815858-5b20-4517-8be6-6f38ebf9917e</id>
+                <link>
+                    <type>Hub</type>
+                    <target>bestof2011charttoppers</target>
+                </link>
+                <title>2011 Hits</title>
+                <text>Tops of the year              </text>
+                <sequenceNumber>2</sequenceNumber>
+                <image>
+                    <id>urn:uuid:641a9af6-8ce0-45b9-884d-bee121b71966</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:00000000-0000-0000-0000-000000000000</id>
+                </backgroundImage>
+            </editorialItem>
+        </editorialItems>
+        <features>
+            <feature>
+                <id>urn:uuid:8c7249b3-df66-411e-a838-7e672068c156</id>
+                <link>
+                    <type>Hub</type>
+                    <target>peopleschoiceawards2012music</target>
+                </link>
+                <title>People's Choice</title>
+                <text>Music nominees                        </text>
+                <sequenceNumber>1</sequenceNumber>
+                <image>
+                    <id>urn:uuid:c9b04fa6-f6c5-4859-8446-cdc10323f5f8</id>
+                </image>
+            </feature>
+            <feature>
+                <id>urn:uuid:f0815858-5b20-4517-8be6-6f38ebf9917e</id>
+                <link>
+                    <type>Hub</type>
+                    <target>bestof2011charttoppers</target>
+                </link>
+                <title>2011 Hits</title>
+                <text>Tops of the year              </text>
+                <sequenceNumber>2</sequenceNumber>
+                <image>
+                    <id>urn:uuid:641a9af6-8ce0-45b9-884d-bee121b71966</id>
+                </image>
+            </feature>
+        </features>
+    </a:entry>
+    <a:author>
+        <a:name>Microsoft Corporation</a:name>
+    </a:author>
+</a:feed>

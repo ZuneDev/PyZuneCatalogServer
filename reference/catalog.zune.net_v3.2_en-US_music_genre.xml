@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- http://catalog.zune.net/v3.2/en-US/music/genre/ -->
+
+<a:feed xmlns:a="http://www.w3.org/2005/Atom"
+    xmlns:os="http://a9.com/-/spec/opensearch/1.1/"
+    xmlns="http://schemas.zune.net/catalog/music/2007/10">
+    <a:link rel="self" type="application/atom+xml" href="/v3.2/en-US/music/genre" />
+    <a:updated>2019-04-08T21:58:31.4152623Z</a:updated>
+    <a:title type="text">Howdy</a:title>
+    <a:id>genre</a:id>
+    <a:entry>
+        <a:link rel="alternate" type="application/atom+xml" href="/v3.2/en-US/music/collection/features/43c33b95-2ee2-4432-b272-0b29190fec9b" />
+        <a:updated>2019-04-08T21:58:31.4152623Z</a:updated>
+        <a:title type="text">Howdy, Zune!</a:title>
+        <a:id>urn:uuid:43c33b95-2ee2-4432-b272-0b29190fec9b</a:id>
+        <primaryArtist>
+            <id>urn:uuid:37690e00-0600-11db-89ca-0019b92a3933</id>
+            <name>Love Infinity</name>
+        </primaryArtist>
+        <index>1</index>
+    </a:entry>
+    <a:entry>
+        <a:link rel="alternate" type="application/atom+xml" href="/v3.2/en-US/podcastCollections/de7cdcbd-5cb3-4c85-9be2-5dc491c4f070" />
+        <a:updated>2019-04-08T21:58:31.4152623Z</a:updated>
+        <a:title type="text">So, how's your day?</a:title>
+        <a:id>urn:uuid:de7cdcbd-5cb3-4c85-9be2-5dc491c4f070</a:id>
+        <index>2</index>
+    </a:entry>
+    <a:entry>
+        <a:link rel="alternate" type="application/atom+xml" href="/v3.2/en-US/podcastCollections/14d631d4-2289-4820-81f3-d372b3dcb940" />
+        <a:updated>2019-04-08T21:58:31.4152623Z</a:updated>
+        <a:title type="text">Test</a:title>
+        <a:id>urn:uuid:14d631d4-2289-4820-81f3-d372b3dcb940</a:id>
+        <index>3</index>
+    </a:entry>
+    <a:author>
+        <a:name>Yoshi Askharoun &amp; Musicbrainz</a:name>
+    </a:author>
+</a:feed>

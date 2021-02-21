@@ -39,9 +39,18 @@ def music_genre_albums(id: str):
 
 @app.route("/v3.2/en-US/music/genre/")
 def music_genre():
-    with open('reference/catalog.zune.net_v3.2_en-US_music_genre.xml', 'r') as file:
-        data: str = file.read().replace('\n', '')
-        return Response(data, mimetype='text/xml')
+    from musizbrainz.genrelist import GENRES
+    lastpulledlist: datetime = datetime(2021, 2, 21)
+
+    doc: Document = minidom.Document()
+    feed: Element = create_feed(doc, "Genres", "genre", request.endpoint, lastpulledlist)
+
+    for genre_name, genre_id in GENRES.items():
+        entry: Element = create_entry(doc, genre_name, genre_id, "/v3.2/en-US/music/genre" + genre_id, lastpulledlist)
+        feed.appendChild(entry)
+
+    xml_str = doc.toprettyxml(indent="\t")
+    return Response(xml_str, mimetype=MIME_XML)
 
 
 @app.route("/v3.2/en-US/music/album/<album_id>/")
@@ -69,8 +78,6 @@ def music_get_album(album_id: str):
         recording = track["recording"]
         track_id: str = recording["id"]
         track_title: str = recording["title"]
-        track_position: str = track["position"]
-        length_ms: str = track["track_or_recording_length"]
         entry: Element = create_entry(doc, track_title, track_id, f"/v3.2/en-US/")
 
         # Create primaryArtist element
@@ -83,13 +90,20 @@ def music_get_album(album_id: str):
         primary_artist_elem.appendChild(artist_name_element)
         entry.appendChild(primary_artist_elem)
 
-        # FIXME: Add duration element
-        length_elem: Element = doc.createElement("duration")
-        set_element_value(length_elem, length_ms)
-
-        # FIXME: Add index element
-        index_elem: Element = doc.createElement("index")
-        set_element_value(index_elem, track_position)
+        try:
+            length_ms: str = track["track_or_recording_length"]
+            # FIXME: Add duration element
+            length_elem: Element = doc.createElement("duration")
+            set_element_value(length_elem, length_ms)
+        except:
+            pass
+        try:
+            track_position: str = track["position"]
+            # FIXME: Add index element
+            index_elem: Element = doc.createElement("index")
+            set_element_value(index_elem, track_position)
+        except:
+            pass
 
         feed.appendChild(entry)
 
@@ -184,11 +198,9 @@ def music_artist_details(id: str, fragment: str):
 @app.route("/v3.2/en-US/music/chart/zune/tracks/")
 def music_chart_tracks():
     recordings = musicbrainzngs.search_recordings("*", limit=100)
-    print(recordings)
     doc: Document = minidom.Document()
     feed: Element = create_feed(doc, "tracks", "tracks", "/v3.2/en-US/music/chart/zune/tracks")
     for recording in recordings["recording-list"]:
-        print(recording)
         # Set track ID and Title
         id: str = recording["id"]
         title: str = recording["title"]
@@ -216,19 +228,75 @@ def music_chart_tracks():
     return Response(xml_str, mimetype=MIME_XML)
 
 
+# Search tracks
 @app.route("/v3.2/en-US/music/track")
-def music_track_details():
+def music_track():
+    query: str = request.args.get("q")
+    response = musicbrainzngs.search_recordings(query)
+    doc: Document = minidom.Document()
+    feed: Element = create_feed(doc, "tracks", "tracks", request.endpoint)
+    for recording in response["recording-list"]:
+        try:
+            # Set track ID and Title
+            id: str = recording["id"]
+            title: str = recording["title"]
+            entry: Element = create_entry(doc, title, id, "/v3.2/en-US/music/track/" + id)
+
+            # Get artist ID and Name
+            artist = recording["artist-credit"][0]["artist"]
+            artist_id: str = artist["id"]
+            artist_name: str = artist["name"]
+
+            # Create primaryArtist element
+            primary_artist_elem: Element = doc.createElement("primaryArtist")
+
+            artist_id_element: Element = doc.createElement("id")
+            set_element_value(artist_id_element, artist_id)
+            primary_artist_elem.appendChild(artist_id_element)
+
+            artist_name_element: Element = doc.createElement("name")
+            set_element_value(artist_name_element, artist_name)
+            primary_artist_elem.appendChild(artist_name_element)
+            entry.appendChild(primary_artist_elem)
+
+            # Get album ID and Title
+            album = recording["release-list"][0]
+            album_id: str = album["id"]
+            album_name: str = album["title"]
+
+            # Create album element
+            album_elem: Element = doc.createElement("album")
+
+            album_id_element: Element = doc.createElement("id")
+            set_element_value(album_id_element, album_id)
+            album_elem.appendChild(album_id_element)
+
+            album_name_element: Element = doc.createElement("title")
+            set_element_value(album_name_element, album_name)
+            album_elem.appendChild(album_name_element)
+            entry.appendChild(album_elem)
+
+            feed.appendChild(entry)
+        except:
+            pass
+    xml_str = doc.toprettyxml(indent="\t")
+    return Response(xml_str, mimetype=MIME_XML)
+
+
+# Search albums
+@app.route("/v3.2/en-US/music/album")
+def music_album():
     query: str = request.args.get("q")
     response = musicbrainzngs.search_releases(query)
     doc: Document = minidom.Document()
-    feed: Element = create_feed(doc, "tracks", "tracks", "/v3.2/en-US/music/chart/zune/tracks")
+    feed: Element = create_feed(doc, "Albums", "albums", "/v3.2/en-US/music/chart/zune/albums")
     for release in response["release-list"]:
         print(release)
 
         # Set track ID and Title
         id: str = release["id"]
         title: str = release["title"]
-        entry: Element = create_entry(doc, title, id, "/v3.2/en-US/music/collection/features/" + id)
+        entry: Element = create_entry(doc, title, id, "/v3.2/en-US/music/album/" + id)
 
         # Get artist ID and Name
         artist = release["artist-credit"][0]["artist"]
@@ -249,7 +317,6 @@ def music_track_details():
 
         feed.appendChild(entry)
     xml_str = doc.toprettyxml(indent="\t")
-    print(xml_str)
     return Response(xml_str, mimetype=MIME_XML)
 
 

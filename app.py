@@ -55,9 +55,7 @@ def music_genre():
 
 @app.route("/v3.2/en-US/music/album/<album_id>/")
 def music_get_album(album_id: str):
-    print(album_id)
     album = musicbrainzngs.get_release_by_id(album_id, includes=["artists", "recordings"])["release"]
-    print(album)
     album_name: str = album["title"]
     artist = album["artist-credit"][0]["artist"]
     artist_id: str = artist["id"]
@@ -171,6 +169,12 @@ def music_get_artist_albums(artist_id: str):
         title: str = release["title"]
         entry: Element = create_entry(doc, title, id, f"/v3.2/en-US/music/artist/{artist_id}/albums/{id}")
         feed.appendChild(entry)
+
+        # Add front cover
+        image_elem: Element = doc.createElement("image")
+        image_id_elem: Element = create_id(doc, id)
+        image_elem.appendChild(image_id_elem)
+        entry.appendChild(image_elem)
 
         # Create primaryArtist element
         primary_artist_elem: Element = doc.createElement("primaryArtist")
@@ -297,6 +301,12 @@ def music_album():
         id: str = release["id"]
         title: str = release["title"]
         entry: Element = create_entry(doc, title, id, "/v3.2/en-US/music/album/" + id)
+
+        # Add front cover
+        image_elem: Element = doc.createElement("image")
+        image_id_elem: Element = create_id(doc, id)
+        image_elem.appendChild(image_id_elem)
+        entry.appendChild(image_elem)
 
         # Get artist ID and Name
         artist = release["artist-credit"][0]["artist"]

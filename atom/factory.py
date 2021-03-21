@@ -73,3 +73,11 @@ def create_entry(doc: Document, title: str, id: str, href: str, date_updated: da
     entry.appendChild(create_id(doc, id))
 
     return entry
+
+
+def create_author(doc: Document, name: str) -> Element:
+    author_elem: Element = doc.createElement("a:author")
+    author_name_elem: Element = doc.createElement("a:name")
+    set_element_value(author_name_elem, name)
+    author_elem.appendChild(author_name_elem)
+    return author_elem

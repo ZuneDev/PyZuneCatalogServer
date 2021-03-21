@@ -5,40 +5,43 @@ import musicbrainzngs
 
 from atom.factory import *
 
+from locale import *
+locale = getdefaultlocale()[0]
+
 app = Flask(__name__)
 musicbrainzngs.set_useragent("Zune", "4.8", "https://github.com/yoshiask/PyZuneCatalogServer")
 
 
-@app.route("/v3.2/en-US/hubs/music")
-def hubs_music():
-    with open('reference/catalog.zune.net_v3.2_en-US_hubs_music.xml', 'r') as file:
+@app.route(f"/v3.2/<string:locale>/hubs/music")
+def hubs_music(locale: str):
+    with open('reference/catalog.zune.net_v3.2_{locale}_hubs_music.xml', 'r') as file:
         data: str = file.read().replace('\n', '')
-        return Response(data, mimetype='text/xml')
+        return Response(data, mimetype=MIME_ATOM_XML)
 
 
-@app.route("/v3.2/en-US/music/hub/podcast/")
-def hubs_podcasts():
-    with open('reference/catalog.zune.net_v3.2_en-US_music_hub_podcast.xml', 'r') as file:
+@app.route(f"/v3.2/<string:locale>/music/hub/podcast/")
+def hubs_podcasts(locale: str):
+    with open('reference/catalog.zune.net_v3.2_{locale}_music_hub_podcast.xml', 'r') as file:
         data: str = file.read().replace('\n', '')
-        return Response(data, mimetype='text/xml')
+        return Response(data, mimetype=MIME_ATOM_XML)
 
 
-@app.route("/v3.2/en-US/music/genre/<string:id>/")
-def music_genre_details(id: str):
-    with open('reference/catalog.zune.net_v3.2_en-US_music_genre.xml', 'r') as file:
+@app.route(f"/v3.2/<string:locale>/music/genre/<string:id>/")
+def music_genre_details(id: str, locale: str):
+    with open('reference/catalog.zune.net_v3.2_{locale}_music_genre.xml', 'r') as file:
         data: str = file.read().replace('\n', '')
-        return Response(data, mimetype='text/xml')
+        return Response(data, mimetype=MIME_ATOM_XML)
 
 
-@app.route("/v3.2/en-US/music/genre/<string:id>/albums/")
-def music_genre_albums(id: str):
-    with open('reference/catalog.zune.net_v3.2_en-US_music_genre.xml', 'r') as file:
+@app.route(f"/v3.2/<string:locale>/music/genre/<string:id>/albums/")
+def music_genre_albums(id: str, locale: str):
+    with open('reference/catalog.zune.net_v3.2_{locale}_music_genre.xml', 'r') as file:
         data: str = file.read().replace('\n', '')
-        return Response(data, mimetype='text/xml')
+        return Response(data, mimetype=MIME_ATOM_XML)
 
 
-@app.route("/v3.2/en-US/music/genre/")
-def music_genre():
+@app.route(f"/v3.2/<string:locale>/music/genre/")
+def music_genre(locale: str):
     from musizbrainz.genrelist import GENRES
     lastpulledlist: datetime = datetime(2021, 2, 21)
 
@@ -46,15 +49,15 @@ def music_genre():
     feed: Element = create_feed(doc, "Genres", "genre", request.endpoint, lastpulledlist)
 
     for genre_name, genre_id in GENRES.items():
-        entry: Element = create_entry(doc, genre_name, genre_id, "/v3.2/en-US/music/genre" + genre_id, lastpulledlist)
+        entry: Element = create_entry(doc, genre_name, genre_id, "/v3.2/{locale}/music/genre" + genre_id, lastpulledlist)
         feed.appendChild(entry)
 
     xml_str = doc.toprettyxml(indent="\t")
     return Response(xml_str, mimetype=MIME_XML)
 
 
-@app.route("/v3.2/en-US/music/album/<album_id>/")
-def music_get_album(album_id: str):
+@app.route(f"/v3.2/<string:locale>/music/album/<album_id>/")
+def music_get_album(album_id: str, locale: str):
     album = musicbrainzngs.get_release_by_id(album_id, includes=["artists", "recordings"])["release"]
     album_name: str = album["title"]
     artist = album["artist-credit"][0]["artist"]
@@ -76,7 +79,7 @@ def music_get_album(album_id: str):
         recording = track["recording"]
         track_id: str = recording["id"]
         track_title: str = recording["title"]
-        entry: Element = create_entry(doc, track_title, track_id, f"/v3.2/en-US/")
+        entry: Element = create_entry(doc, track_title, track_id, f"/v3.2/{locale}/")
 
         # Create primaryArtist element
         primary_artist_elem: Element = doc.createElement("primaryArtist")
@@ -110,20 +113,20 @@ def music_get_album(album_id: str):
     return Response(xml_str, mimetype=MIME_XML)
 
 
-@app.route("/v3.2/en-US/music/album/<string:id>/<path:fragment>/")
-def music_album_details(id: str, fragment: str):
+@app.route(f"/v3.2/<string:locale>/music/album/<string:id>/<path:fragment>/")
+def music_album_details(id: str, fragment: str, locale: str):
     return fragment
 
 
 # Get artist information
-@app.route("/v3.2/en-US/music/artist/<string:id>/")
-def music_get_artist(id: str):
+@app.route(f"/v3.2/<string:locale>/music/artist/<string:id>/")
+def music_get_artist(id: str, locale: str):
     return music_get_artist_tracks(id)
 
 
 # Get artist's tracks
-@app.route("/v3.2/en-US/music/artist/<string:artist_id>/tracks/")
-def music_get_artist_tracks(artist_id: str):
+@app.route(f"/v3.2/<string:locale>/music/artist/<string:artist_id>/tracks/")
+def music_get_artist_tracks(artist_id: str, locale: str):
     recordings = musicbrainzngs.browse_recordings(artist_id, limit=100)["recording-list"]
     artist = musicbrainzngs.get_artist_by_id(artist_id)["artist"]
     artist_name: str = artist["name"]
@@ -134,7 +137,7 @@ def music_get_artist_tracks(artist_id: str):
     for recording in recordings:
         id: str = recording["id"]
         title: str = recording["title"]
-        entry: Element = create_entry(doc, title, id, f"/v3.2/en-US/music/artist/{artist_id}/tracks/{id}")
+        entry: Element = create_entry(doc, title, id, f"/v3.2/{locale}/music/artist/{artist_id}/tracks/{id}")
         feed.appendChild(entry)
 
         # Create primaryArtist element
@@ -155,8 +158,8 @@ def music_get_artist_tracks(artist_id: str):
 
 
 # Get artist's albums
-@app.route("/v3.2/en-US/music/artist/<string:artist_id>/albums/")
-def music_get_artist_albums(artist_id: str):
+@app.route(f"/v3.2/<string:locale>/music/artist/<string:artist_id>/albums/")
+def music_get_artist_albums(artist_id: str, locale: str):
     releases = musicbrainzngs.browse_releases(artist_id, limit=100)["release-list"]
     artist = musicbrainzngs.get_artist_by_id(artist_id)["artist"]
     artist_name: str = artist["name"]
@@ -167,7 +170,7 @@ def music_get_artist_albums(artist_id: str):
     for release in releases:
         id: str = release["id"]
         title: str = release["title"]
-        entry: Element = create_entry(doc, title, id, f"/v3.2/en-US/music/artist/{artist_id}/albums/{id}")
+        entry: Element = create_entry(doc, title, id, f"/v3.2/{locale}/music/artist/{artist_id}/albums/{id}")
         feed.appendChild(entry)
 
         # Add front cover
@@ -193,22 +196,22 @@ def music_get_artist_albums(artist_id: str):
     return Response(xml_str, mimetype=MIME_XML)
 
 
-@app.route("/v3.2/en-US/music/artist/<string:id>/<path:fragment>/")
-def music_artist_details(id: str, fragment: str):
+@app.route(f"/v3.2/<string:locale>/music/artist/<string:id>/<path:fragment>/")
+def music_artist_details(id: str, fragment: str, locale: str):
     return fragment
 
 
 # Get top tracks
-@app.route("/v3.2/en-US/music/chart/zune/tracks/")
-def music_chart_tracks():
+@app.route(f"/v3.2/<string:locale>/music/chart/zune/tracks/")
+def music_chart_tracks(locale: str):
     recordings = musicbrainzngs.search_recordings("*", limit=100)
     doc: Document = minidom.Document()
-    feed: Element = create_feed(doc, "tracks", "tracks", "/v3.2/en-US/music/chart/zune/tracks")
+    feed: Element = create_feed(doc, "tracks", "tracks", f"/v3.2/{locale}/music/chart/zune/tracks")
     for recording in recordings["recording-list"]:
         # Set track ID and Title
         id: str = recording["id"]
         title: str = recording["title"]
-        entry: Element = create_entry(doc, title, id, "/v3.2/en-US/music/collection/features/" + id)
+        entry: Element = create_entry(doc, title, id, f"/v3.2/{locale}/music/collection/features/" + id)
 
         # Get artist ID and Name
         artist = recording["artist-credit"][0]["artist"]
@@ -233,8 +236,8 @@ def music_chart_tracks():
 
 
 # Search tracks
-@app.route("/v3.2/en-US/music/track")
-def music_track():
+@app.route(f"/v3.2/<string:locale>/music/track")
+def music_track(locale: str):
     query: str = request.args.get("q")
     response = musicbrainzngs.search_recordings(query)
     doc: Document = minidom.Document()
@@ -244,7 +247,7 @@ def music_track():
             # Set track ID and Title
             id: str = recording["id"]
             title: str = recording["title"]
-            entry: Element = create_entry(doc, title, id, "/v3.2/en-US/music/track/" + id)
+            entry: Element = create_entry(doc, title, id, f"/v3.2/{locale}/music/track/" + id)
 
             # Get artist ID and Name
             artist = recording["artist-credit"][0]["artist"]
@@ -288,19 +291,19 @@ def music_track():
 
 
 # Search albums
-@app.route("/v3.2/en-US/music/album")
-def music_album():
+@app.route(f"/v3.2/<string:locale>/music/album")
+def music_album(locale: str):
     query: str = request.args.get("q")
     response = musicbrainzngs.search_releases(query)
     doc: Document = minidom.Document()
-    feed: Element = create_feed(doc, "Albums", "albums", "/v3.2/en-US/music/chart/zune/albums")
+    feed: Element = create_feed(doc, "Albums", "albums", f"/v3.2/{locale}/music/chart/zune/albums")
     for release in response["release-list"]:
         print(release)
 
         # Set track ID and Title
         id: str = release["id"]
         title: str = release["title"]
-        entry: Element = create_entry(doc, title, id, "/v3.2/en-US/music/album/" + id)
+        entry: Element = create_entry(doc, title, id, f"/v3.2/{locale}/music/album/" + id)
 
         # Add front cover
         image_elem: Element = doc.createElement("image")
@@ -336,10 +339,41 @@ def commerce():
     return "Howdy, Zune!"
 
 
+### MOVIES
+@app.route(f"/v3.2/<string:locale>/chart/zuneDownload/movie/")
+def chart_zunedown_movie(locale: str):
+    with open('reference/catalog.zune.net_v3.2_en-US_hubs_music.xml', 'r') as file:
+        data: str = file.read().replace('\n', '')
+        return Response(data, mimetype=MIME_ATOM_XML)
+
+
+@app.route(f"/v3.2/<string:locale>/music/hub/movie/")
+def hubs_movie(locale: str):
+    with open('reference/catalog.zune.net_v3.2_en-US_hubs_music.xml', 'r') as file:
+        data: str = file.read().replace('\n', '')
+        return Response(data, mimetype=MIME_ATOM_XML)
+
+
+@app.route(f"/v3.2/<string:locale>/music/hub/video/")
+def hubs_video(locale: str):
+    with open('reference/catalog.zune.net_v3.2_en-US_hubs_music.xml', 'r') as file:
+        data: str = file.read().replace('\n', '')
+        return Response(data, mimetype=MIME_ATOM_XML)
+
+
 ### IMAGES
-@app.route("/v3.2/en-US/image/<string:mbid>")
-def get_image(mbid: str):
+@app.route(f"/v3.2/<string:locale>/image/<string:mbid>")
+def get_image(mbid: str, locale: str):
     print("Image request for", mbid)
     import urllib.request
     image = urllib.request.urlopen(f"http://coverartarchive.org/release/{mbid}/front")
     return Response(image.read(), mimetype=MIME_JPG)
+
+### Metadata
+# fai.music.metaservices.microsoft.com
+@app.route("/ZuneAPI/EndPoints.aspx")
+def get_metadata_endpoints():
+    print(request.full_path)
+    with open('reference/catalog.zune.net_v3.2_en-US_hubs_music.xml', 'r') as file:
+        data: str = file.read().replace('\n', '')
+        return Response(data, mimetype=MIME_ATOM_XML)

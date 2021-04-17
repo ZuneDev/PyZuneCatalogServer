@@ -8,6 +8,7 @@ from atom.factory import *
 from locale import *
 locale = getdefaultlocale()[0]
 
+
 app = Flask(__name__)
 musicbrainzngs.set_useragent("Zune", "4.8", "https://github.com/yoshiask/PyZuneCatalogServer")
 
@@ -121,7 +122,7 @@ def music_album_details(id: str, fragment: str, locale: str):
 # Get artist information
 @app.route(f"/v3.2/<string:locale>/music/artist/<string:id>/")
 def music_get_artist(id: str, locale: str):
-    return music_get_artist_tracks(id)
+    return music_get_artist_tracks(id, locale)
 
 
 # Get artist's tracks

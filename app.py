@@ -1,7 +1,9 @@
+from urllib.error import HTTPError
 from xml.dom.minidom import Document, Element
 
-from flask import Flask, request, Response
+from flask import Flask, request, abort, Response
 import musicbrainzngs
+from musicbrainzngs.musicbrainz import ResponseError
 
 from atom.factory import *
 
@@ -57,9 +59,13 @@ def music_genre(locale: str):
     return Response(xml_str, mimetype=MIME_XML)
 
 
-@app.route(f"/v3.2/<string:locale>/music/album/<album_id>/")
+@app.route(f"/v3.2/<string:locale>/music/album/<string:album_id>/")
 def music_get_album(album_id: str, locale: str):
-    album = musicbrainzngs.get_release_by_id(album_id, includes=["artists", "recordings"])["release"]
+    try:
+        album = musicbrainzngs.get_release_by_id(album_id, includes=["artists", "recordings"])["release"]
+    except ResponseError as error:
+        abort(error.cause.code)
+        return
     album_name: str = album["title"]
     artist = album["artist-credit"][0]["artist"]
     artist_id: str = artist["id"]
@@ -97,13 +103,15 @@ def music_get_album(album_id: str, locale: str):
             # FIXME: Add duration element
             length_elem: Element = doc.createElement("duration")
             set_element_value(length_elem, length_ms)
+            entry.appendChild(length_elem)
         except:
             pass
         try:
             track_position: str = track["position"]
             # FIXME: Add index element
-            index_elem: Element = doc.createElement("index")
+            index_elem: Element = doc.createElement("trackNumber")
             set_element_value(index_elem, track_position)
+            entry.appendChild(index_elem)
         except:
             pass
 
@@ -128,7 +136,11 @@ def music_get_artist(id: str, locale: str):
 # Get artist's tracks
 @app.route(f"/v3.2/<string:locale>/music/artist/<string:artist_id>/tracks/")
 def music_get_artist_tracks(artist_id: str, locale: str):
-    recordings = musicbrainzngs.browse_recordings(artist_id, limit=100)["recording-list"]
+    try:
+        recordings = musicbrainzngs.browse_recordings(artist_id, limit=100)["recording-list"]
+    except ResponseError as error:
+        abort(error.cause.code)
+        return
     artist = musicbrainzngs.get_artist_by_id(artist_id)["artist"]
     artist_name: str = artist["name"]
 
@@ -155,13 +167,18 @@ def music_get_artist_tracks(artist_id: str, locale: str):
 
     #doc.appendChild(feed)
     xml_str = doc.toprettyxml(indent="\t")
+    print(xml_str)
     return Response(xml_str, mimetype=MIME_XML)
 
 
 # Get artist's albums
 @app.route(f"/v3.2/<string:locale>/music/artist/<string:artist_id>/albums/")
 def music_get_artist_albums(artist_id: str, locale: str):
-    releases = musicbrainzngs.browse_releases(artist_id, limit=100)["release-list"]
+    try:
+        releases = musicbrainzngs.browse_releases(artist_id, limit=100)["release-list"]
+    except ResponseError as error:
+        abort(error.cause.code)
+        return
     artist = musicbrainzngs.get_artist_by_id(artist_id)["artist"]
     artist_name: str = artist["name"]
 
@@ -202,10 +219,68 @@ def music_artist_details(id: str, fragment: str, locale: str):
     return fragment
 
 
+@app.route("/v3.2/<string:locale>/music/track/<string:mbid>/")
+def music_get_track(mbid: str, locale: str):
+    try:
+        response = musicbrainzngs.get_recording_by_id(mbid, includes=["artist-credits", "releases"])
+    except ResponseError as error:
+        abort(error.cause.code)
+        return
+    recording = response["recording"]
+    doc: Document = minidom.Document()
+
+    # Set track ID and Title
+    id: str = recording["id"]
+    title: str = recording["title"]
+    feed: Element = create_feed(doc, title, id, request.endpoint)
+
+    #entry: Element = create_entry(doc, title, id, f"/v3.2/{locale}/music/track/" + id)
+
+    # Get artist ID and Name
+    artist = recording["artist-credit"][0]["artist"]
+    artist_id: str = artist["id"]
+    artist_name: str = artist["name"]
+
+    # Create primaryArtist element
+    primary_artist_elem: Element = doc.createElement("primaryArtist")
+
+    artist_id_element: Element = doc.createElement("id")
+    set_element_value(artist_id_element, artist_id)
+    primary_artist_elem.appendChild(artist_id_element)
+
+    artist_name_element: Element = doc.createElement("name")
+    set_element_value(artist_name_element, artist_name)
+    primary_artist_elem.appendChild(artist_name_element)
+    feed.appendChild(primary_artist_elem)
+
+    # Get album ID and Title
+    album = recording["release-list"][0]
+    album_id: str = album["id"]
+    album_name: str = album["title"]
+
+    # Create album elements
+    album_id_element: Element = doc.createElement("albumId")
+    set_element_value(album_id_element, album_id)
+    feed.appendChild(album_id_element)
+
+    album_name_element: Element = doc.createElement("albumTitle")
+    set_element_value(album_name_element, album_name)
+    feed.appendChild(album_name_element)
+
+    #feed.appendChild(entry)
+    xml_str = doc.toprettyxml(indent="\t")
+    print(xml_str)
+    return Response(xml_str, mimetype=MIME_XML)
+
+
 # Get top tracks
 @app.route(f"/v3.2/<string:locale>/music/chart/zune/tracks/")
 def music_chart_tracks(locale: str):
-    recordings = musicbrainzngs.search_recordings("*", limit=100)
+    try:
+        recordings = musicbrainzngs.search_recordings("*", limit=100)
+    except ResponseError as error:
+        abort(error.cause.code)
+        return
     doc: Document = minidom.Document()
     feed: Element = create_feed(doc, "tracks", "tracks", f"/v3.2/{locale}/music/chart/zune/tracks")
     for recording in recordings["recording-list"]:
@@ -240,7 +315,11 @@ def music_chart_tracks(locale: str):
 @app.route(f"/v3.2/<string:locale>/music/track")
 def music_track(locale: str):
     query: str = request.args.get("q")
-    response = musicbrainzngs.search_recordings(query)
+    try:
+        response = musicbrainzngs.search_recordings(query)
+    except ResponseError as error:
+        abort(error.cause.code)
+        return
     doc: Document = minidom.Document()
     feed: Element = create_feed(doc, "tracks", "tracks", request.endpoint)
     for recording in response["recording-list"]:
@@ -295,7 +374,11 @@ def music_track(locale: str):
 @app.route(f"/v3.2/<string:locale>/music/album")
 def music_album(locale: str):
     query: str = request.args.get("q")
-    response = musicbrainzngs.search_releases(query)
+    try:
+        response = musicbrainzngs.search_releases(query)
+    except ResponseError as error:
+        abort(error.cause.code)
+        return
     doc: Document = minidom.Document()
     feed: Element = create_feed(doc, "Albums", "albums", f"/v3.2/{locale}/music/chart/zune/albums")
     for release in response["release-list"]:
@@ -378,3 +461,7 @@ def get_metadata_endpoints():
     with open('reference/catalog.zune.net_v3.2_en-US_hubs_music.xml', 'r') as file:
         data: str = file.read().replace('\n', '')
         return Response(data, mimetype=MIME_ATOM_XML)
+
+
+if __name__ == "__main__":
+    app.run(port=80, host="127.0.0.2")

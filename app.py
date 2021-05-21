@@ -43,7 +43,7 @@ def music_genre_albums(id: str, locale: str):
 
 @app.route(f"/v3.2/<string:locale>/music/genre/")
 def music_genre(locale: str):
-    from musizbrainz.genrelist import GENRES
+    from musicbrainz.genrelist import GENRES
     lastpulledlist: datetime = datetime(2021, 2, 21)
 
     doc: Document = minidom.Document()

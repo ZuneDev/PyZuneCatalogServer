@@ -1,4 +1,3 @@
-from urllib.error import HTTPError
 from xml.dom.minidom import Document, Element
 
 from flask import Flask, request, abort, Response
@@ -13,6 +12,22 @@ locale = getdefaultlocale()[0]
 
 app = Flask(__name__)
 musicbrainzngs.set_useragent("Zune", "4.8", "https://github.com/yoshiask/PyZuneCatalogServer")
+
+
+import re
+@app.after_request
+def allow_zunestk_cors(response):
+    r: str = request.origin
+    print(r)
+    if re.match(r"https?://(127\.0\.0\.(?:\d*)|localhost(?:\:\d+)?|(?:\w*\.)*zunes\.tk)", r):
+        response.headers.add('Access-Control-Allow-Origin', r)
+        response.headers.add('Access-Control-Allow-Credentials', 'true')
+        response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
+        response.headers.add('Access-Control-Allow-Headers', 'Cache-Control')
+        response.headers.add('Access-Control-Allow-Headers', 'X-Requested-With')
+        response.headers.add('Access-Control-Allow-Headers', 'Authorization')
+        response.headers.add('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE')
+    return response
 
 
 @app.route(f"/v3.2/<string:locale>/hubs/music")

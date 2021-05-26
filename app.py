@@ -17,8 +17,9 @@ musicbrainzngs.set_useragent("Zune", "4.8", "https://github.com/yoshiask/PyZuneC
 import re
 @app.after_request
 def allow_zunestk_cors(response):
-    r: str = request.origin
-    print(r)
+    r = request.origin
+    if r is None:
+        return response
     if re.match(r"https?://(127\.0\.0\.(?:\d*)|localhost(?:\:\d+)?|(?:\w*\.)*zunes\.tk)", r):
         response.headers.add('Access-Control-Allow-Origin', r)
         response.headers.add('Access-Control-Allow-Credentials', 'true')
@@ -32,7 +33,7 @@ def allow_zunestk_cors(response):
 
 @app.route(f"/v3.2/<string:locale>/hubs/music")
 def hubs_music(locale: str):
-    with open('reference/catalog.zune.net_v3.2_{locale}_hubs_music.xml', 'r') as file:
+    with open(f'reference/catalog.zune.net_v3.2_{locale}_hubs_music.xml', 'r') as file:
         data: str = file.read().replace('\n', '')
         return Response(data, mimetype=MIME_ATOM_XML)
 
@@ -160,7 +161,7 @@ def music_get_artist_tracks(artist_id: str, locale: str):
     artist_name: str = artist["name"]
 
     doc: Document = minidom.Document()
-    feed: Element = create_feed(doc, artist_id, artist_name, request.endpoint)
+    feed: Element = create_feed(doc, artist_name, artist_id, request.endpoint)
 
     for recording in recordings:
         id: str = recording["id"]
@@ -198,7 +199,7 @@ def music_get_artist_albums(artist_id: str, locale: str):
     artist_name: str = artist["name"]
 
     doc: Document = minidom.Document()
-    feed: Element = create_feed(doc, artist_id, artist_name, request.endpoint)
+    feed: Element = create_feed(doc, artist_name, artist_id, request.endpoint)
 
     for release in releases:
         id: str = release["id"]
@@ -395,7 +396,7 @@ def music_album(locale: str):
         abort(error.cause.code)
         return
     doc: Document = minidom.Document()
-    feed: Element = create_feed(doc, "Albums", "albums", f"/v3.2/{locale}/music/chart/zune/albums")
+    feed: Element = create_feed(doc, response["title"], response["id"], f"/v3.2/{locale}/music/chart/zune/albums")
     for release in response["release-list"]:
         print(release)
 

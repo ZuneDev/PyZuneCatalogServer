@@ -1,0 +1,134 @@
+<!-- http://www.zune.net/en-us/music/artists/rss.xml -->
+
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:xboxlive="http://www.xbox.com">
+  <channel>
+    <title>Featured Artists </title>
+    <description>Get updates on emerging artists featured in Zune Marketplace.</description>
+    <link>http://www.zune.net/en-us/music/artists/default.htm</link>
+    <ttl>60</ttl>
+    <language>en-US</language>
+    <copyright>©2008 Microsoft Corporation.  All Rights Reserved
+</copyright>
+    <item>
+      <title>Artist of the Week: Los Tigres del Norte</title>
+      <guid isPermaLink="false">1204584976740_531331</guid>
+      <description>Los Tigres del Norte school you on their roots on their latest release, Raices.</description>
+      <link>http://social.zune.net/artistdetails.aspx?aid=0c730000-0600-11db-89ca-0019b92a3933</link>
+      <pubDate>Tue, 04 Mar 2008 00:00:00 GMT</pubDate>
+      <category>Artists</category>
+    </item>
+    <item>
+      <title>Sara Bareilles</title>
+      <guid isPermaLink="false">1204584962162_692166</guid>
+      <description>As a gifted singer and a versatile pianist with no formal training, Sara Bareilles burst onto the pop scene ...</description>
+      <link>http://social.zune.net/artistdetails.aspx?aid=fd460b00-0600-11db-89ca-0019b92a3933</link>
+      <pubDate>Tue, 04 Mar 2008 00:00:00 GMT</pubDate>
+      <category>Artists</category>
+    </item>
+    <item>
+      <title>Jack Johnson</title>
+      <guid isPermaLink="false">1204584960824_320137</guid>
+      <description>Before Jack Johnson perfected his rock star ways, he was a champion surfer on the professional route ...</description>
+      <link>http://social.zune.net/artistdetails.aspx?aid=0d270700-0600-11db-89ca-0019b92a3933</link>
+      <pubDate>Tue, 04 Mar 2008 00:00:00 GMT</pubDate>
+      <category>Artists</category>
+    </item>
+    <item>
+      <title>Flo Rida</title>
+      <guid isPermaLink="false">1204584960588_934621</guid>
+      <description>A native Floridian, Flo Rida is an MC who toured as a teenager with 2 Live Crew's Fresh Kid Ice ...</description>
+      <link>http://social.zune.net/artistdetails.aspx?aid=c4160e00-0600-11db-89ca-0019b92a3933</link>
+      <pubDate>Tue, 04 Mar 2008 00:00:00 GMT</pubDate>
+      <category>Artists</category>
+    </item>
+    <item>
+      <title>Goldfrapp</title>
+      <guid isPermaLink="false">1204584960255_502302</guid>
+      <description>England's singer/composer/keyboardist Allison Goldfrapp began exploring music as a part of her studies ...</description>
+      <link>http://social.zune.net/artistdetails.aspx?aid=3dbf0600-0600-11db-89ca-0019b92a3933</link>
+      <pubDate>Tue, 04 Mar 2008 00:00:00 GMT</pubDate>
+      <category>Artists</category>
+    </item>
+    <item>
+      <title>Timbaland</title>
+      <guid isPermaLink="false">1204584959694_491210</guid>
+      <description>Ascending to the top of the rap industry in the late '90s, Timbaland impressively ...</description>
+      <link>http://social.zune.net/artistdetails.aspx?aid=71540300-0600-11db-89ca-0019b92a3933</link>
+      <pubDate>Tue, 04 Mar 2008 00:00:00 GMT</pubDate>
+      <category>Artists</category>
+    </item>
+    <item>
+      <title>Artist of the Week: Erykah Badu</title>
+      <guid isPermaLink="false">1204016405236_552507</guid>
+      <description>Neo-soul singer Erykah Badu releases New Amerykah, Part One (4th World War).</description>
+      <link>http://social.zune.net/AlbumDetails.aspx?aid=9b2ec700-0100-11db-89ca-0019b92a3933</link>
+      <pubDate>Tue, 26 Feb 2008 00:00:00 GMT</pubDate>
+      <category>Artists</category>
+    </item>
+    <item>
+      <title>Kelly Rowland</title>
+      <guid isPermaLink="false">1204016367505_624031</guid>
+      <description>Rosing to fame with the success of Destiny's Child during the late '90s, Rowland began singing ...</description>
+      <link>http://social.zune.net/artistdetails.aspx?aid=c7660500-0600-11db-89ca-0019b92a3933</link>
+      <pubDate>Tue, 26 Feb 2008 00:00:00 GMT</pubDate>
+      <category>Artists</category>
+    </item>
+    <item>
+      <title>Against Me!</title>
+      <guid isPermaLink="false">1204016323774_963063</guid>
+      <description>The roots of Against Me!'s rousing punk-folk sound lie in Tom Gabel's guitar-and-stool troubadourship ...</description>
+      <link>http://social.zune.net/artistdetails.aspx?aid=4e340900-0600-11db-89ca-0019b92a3933</link>
+      <pubDate>Tue, 26 Feb 2008 00:00:00 GMT</pubDate>
+      <category>Artists</category>
+    </item>
+    <item>
+      <title>Hot Chip</title>
+      <guid isPermaLink="false">1204016266282_247281</guid>
+      <description>Hailing from London, Hot Chip entered the picture with the release of their 2000 debut, Mexico ...</description>
+      <link>http://social.zune.net/artistdetails.aspx?aid=07d80700-0600-11db-89ca-0019b92a3933</link>
+      <pubDate>Tue, 26 Feb 2008 00:00:00 GMT</pubDate>
+      <category>Artists</category>
+    </item>
+    <item>
+      <title>Artist of the Week: The Raveonettes</title>
+      <guid isPermaLink="false">1203545615714_669789</guid>
+      <description>Danish pop duo the Raveonettes releases their third studio album, Lust Lust Lust.</description>
+      <link>http://social.zune.net/AlbumDetails.aspx?aid=207e1200-0400-11db-89ca-0019b92a3933</link>
+      <pubDate>Wed, 20 Feb 2008 00:00:00 GMT</pubDate>
+      <category>Artists</category>
+    </item>
+    <item>
+      <title>Lenny Kravitz</title>
+      <guid isPermaLink="false">1203545584401_913805</guid>
+      <description>There may have been other "retro" rock acts before him, but Lenny Kravitz was one of the first to not ...</description>
+      <link>http://social.zune.net/artistdetails.aspx?aid=64120000-0600-11db-89ca-0019b92a3933</link>
+      <pubDate>Wed, 20 Feb 2008 00:00:00 GMT</pubDate>
+      <category>Artists</category>
+    </item>
+    <item>
+      <title>Michael Jackson</title>
+      <guid isPermaLink="false">1203545547463_330168</guid>
+      <description>Considered the biggest pop star of the 80's, Michael Jackson possessed of all the tools to dominate ...</description>
+      <link>http://social.zune.net/artistdetails.aspx?aid=e0110000-0600-11db-89ca-0019b92a3933</link>
+      <pubDate>Wed, 20 Feb 2008 00:00:00 GMT</pubDate>
+      <category>Artists</category>
+    </item>
+    <item>
+      <title>British Sea Power</title>
+      <guid isPermaLink="false">1203545507900_502703</guid>
+      <description>A rather conceptual indie band—one that's been compared more than once to Joy Division ...</description>
+      <link>http://social.zune.net/artistdetails.aspx?aid=5de50700-0600-11db-89ca-0019b92a3933</link>
+      <pubDate>Wed, 20 Feb 2008 00:00:00 GMT</pubDate>
+      <category>Artists</category>
+    </item>
+    <item>
+      <title>Artist of the Week: Michael Jackson</title>
+      <guid isPermaLink="false">1202804328092_296555</guid>
+      <description>Michael Jackson and special guests celebrate Thriller's 25th anniversary.</description>
+      <link>http://social.zune.net/AlbumDetails.aspx?aid=11e5c300-0100-11db-89ca-0019b92a3933</link>
+      <pubDate>Tue, 12 Feb 2008 00:00:00 GMT</pubDate>
+      <category>Artists</category>
+    </item>
+  </channel>
+</rss>

@@ -1,3 +1,4 @@
+import urllib
 from xml.dom.minidom import Document, Element
 
 from flask import Flask, request, abort, Response
@@ -20,7 +21,7 @@ def allow_zunestk_cors(response):
     r = request.origin
     if r is None:
         return response
-    if re.match(r"https?://(127\.0\.0\.(?:\d*)|localhost(?:\:\d+)?|(?:\w*\.)*zunes\.tk)", r):
+    if re.match(r"https?://(127\.0\.0\.(?:\d*)|localhost(?::\d+)?|(?:\w*\.)*zunes\.tk)", r):
         response.headers.add('Access-Control-Allow-Origin', r)
         response.headers.add('Access-Control-Allow-Credentials', 'true')
         response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
@@ -38,23 +39,16 @@ def hubs_music(locale: str):
         return Response(data, mimetype=MIME_ATOM_XML)
 
 
-@app.route(f"/v3.2/<string:locale>/music/hub/podcast/")
-def hubs_podcasts(locale: str):
-    with open('reference/catalog.zune.net_v3.2_{locale}_music_hub_podcast.xml', 'r') as file:
-        data: str = file.read().replace('\n', '')
-        return Response(data, mimetype=MIME_ATOM_XML)
-
-
 @app.route(f"/v3.2/<string:locale>/music/genre/<string:id>/")
 def music_genre_details(id: str, locale: str):
-    with open('reference/catalog.zune.net_v3.2_{locale}_music_genre.xml', 'r') as file:
+    with open(f'reference/catalog.zune.net_v3.2_{locale}_music_genre.xml', 'r') as file:
         data: str = file.read().replace('\n', '')
         return Response(data, mimetype=MIME_ATOM_XML)
 
 
 @app.route(f"/v3.2/<string:locale>/music/genre/<string:id>/albums/")
 def music_genre_albums(id: str, locale: str):
-    with open('reference/catalog.zune.net_v3.2_{locale}_music_genre.xml', 'r') as file:
+    with open(f'reference/catalog.zune.net_v3.2_{locale}_music_genre.xml', 'r') as file:
         data: str = file.read().replace('\n', '')
         return Response(data, mimetype=MIME_ATOM_XML)
 
@@ -68,7 +62,7 @@ def music_genre(locale: str):
     feed: Element = create_feed(doc, "Genres", "genre", request.endpoint, lastpulledlist)
 
     for genre_name, genre_id in GENRES.items():
-        entry: Element = create_entry(doc, genre_name, genre_id, "/v3.2/{locale}/music/genre" + genre_id, lastpulledlist)
+        entry: Element = create_entry(doc, genre_name, genre_id, f"/v3.2/{locale}/music/genre" + genre_id, lastpulledlist)
         feed.appendChild(entry)
 
     xml_str = doc.toprettyxml(indent="\t")
@@ -104,30 +98,53 @@ def music_get_album(album_id: str, locale: str):
         track_title: str = recording["title"]
         entry: Element = create_entry(doc, track_title, track_id, f"/v3.2/{locale}/")
 
-        # Create primaryArtist element
+        # Set primaryArtist
         primary_artist_elem: Element = doc.createElement("primaryArtist")
-        artist_id_element: Element = doc.createElement("id")
-        set_element_value(artist_id_element, artist_id)
-        primary_artist_elem.appendChild(artist_id_element)
-        artist_name_element: Element = doc.createElement("name")
-        set_element_value(artist_name_element, artist_name)
-        primary_artist_elem.appendChild(artist_name_element)
+        primary_artist_props = {
+            "id": artist_id,
+            "name": artist_name
+        }
+        set_values_as_elements(doc, primary_artist_elem, primary_artist_props)
         entry.appendChild(primary_artist_elem)
 
         try:
-            length_ms: str = track["track_or_recording_length"]
+            length_ms: int = int(track["track_or_recording_length"])
             # FIXME: Add duration element
             length_elem: Element = doc.createElement("duration")
-            set_element_value(length_elem, length_ms)
+            length_timespan: str = f"00:00:00.{length_ms:0>3}"
+            print("Duration:", length_timespan)
+            set_element_value(length_elem, length_timespan)
             entry.appendChild(length_elem)
         except:
             pass
         try:
             track_position: str = track["position"]
-            # FIXME: Add index element
+            # FIXME: Add track number element
             index_elem: Element = doc.createElement("trackNumber")
+            print("Track #:", track_position)
             set_element_value(index_elem, track_position)
             entry.appendChild(index_elem)
+        except:
+            pass
+
+        try:
+            # Add rights
+            right: Element = doc.createElement("right")
+            right_props = {
+                "providerName": "YouTube",
+                "providerCode": "27407509:MP3_DOWNLOAD_UENC_320kb_070",
+                "pointsPrice": "800",
+                "licenseType": "Preview",
+                "audioEncoding": "WMA",
+                "offerId": "urn:uuid:9534a201-2102-11db-89ca-0019b92a3933",
+                "offerInstanceId": "urn:uuid:9534a201-2102-11db-89ca-0019b92a3933",
+            }
+            set_values_as_elements(doc, right, right_props)
+            rights: Element = doc.createElement("rights")
+            rights.appendChild(right)
+            entry.appendChild(rights)
+            set_value_as_element(doc, entry, "isActionable", "True")
+            set_value_as_element(doc, entry, "canPlay", "True")
         except:
             pass
 
@@ -171,19 +188,14 @@ def music_get_artist_tracks(artist_id: str, locale: str):
 
         # Create primaryArtist element
         primary_artist_elem: Element = doc.createElement("primaryArtist")
-
-        artist_id_element: Element = doc.createElement("id")
-        set_element_value(artist_id_element, artist_id)
-        primary_artist_elem.appendChild(artist_id_element)
-
-        artist_name_element: Element = doc.createElement("name")
-        set_element_value(artist_name_element, artist_name)
-        primary_artist_elem.appendChild(artist_name_element)
+        primary_artist_props = {
+            "id": artist_id,
+            "name": artist_name
+        }
+        set_values_as_elements(doc, primary_artist_elem, primary_artist_props)
         entry.appendChild(primary_artist_elem)
 
-    #doc.appendChild(feed)
     xml_str = doc.toprettyxml(indent="\t")
-    print(xml_str)
     return Response(xml_str, mimetype=MIME_XML)
 
 
@@ -215,14 +227,11 @@ def music_get_artist_albums(artist_id: str, locale: str):
 
         # Create primaryArtist element
         primary_artist_elem: Element = doc.createElement("primaryArtist")
-
-        artist_id_element: Element = doc.createElement("id")
-        set_element_value(artist_id_element, artist_id)
-        primary_artist_elem.appendChild(artist_id_element)
-
-        artist_name_element: Element = doc.createElement("name")
-        set_element_value(artist_name_element, artist_name)
-        primary_artist_elem.appendChild(artist_name_element)
+        primary_artist_props = {
+            "id": artist_id,
+            "name": artist_name
+        }
+        set_values_as_elements(doc, primary_artist_elem, primary_artist_props)
         entry.appendChild(primary_artist_elem)
 
     #doc.appendChild(feed)
@@ -310,17 +319,30 @@ def music_chart_tracks(locale: str):
         artist_id: str = artist["id"]
         artist_name: str = artist["name"]
 
-        # Create primaryArtist element
+        # Set primaryArtist
         primary_artist_elem: Element = doc.createElement("primaryArtist")
-
-        artist_id_element: Element = doc.createElement("id")
-        set_element_value(artist_id_element, artist_id)
-        primary_artist_elem.appendChild(artist_id_element)
-
-        artist_name_element: Element = doc.createElement("name")
-        set_element_value(artist_name_element, artist_name)
-        primary_artist_elem.appendChild(artist_name_element)
+        primary_artist_props = {
+            "id": artist_id,
+            "name": artist_name
+        }
+        set_values_as_elements(doc, primary_artist_elem, primary_artist_props)
         entry.appendChild(primary_artist_elem)
+
+        # Add rights
+        right: Element = doc.createElement("right")
+        right_props = {
+            "providerName": "YouTube",
+            "providerCode": "27407509:MP3_DOWNLOAD_UENC_320kb_070",
+            "pointsPrice": "800",
+            "licenseType": "Preview",
+            "audioEncoding": "WMA",
+            "offerId": "urn:uuid:9534a201-2102-11db-89ca-0019b92a3933",
+            "offerInstanceId": "urn:uuid:9534a201-2102-11db-89ca-0019b92a3933",
+        }
+        set_values_as_elements(doc, right, right_props)
+        rights: Element = doc.createElement("rights")
+        rights.appendChild(right)
+        entry.appendChild(rights)
 
         feed.appendChild(entry)
     xml_str = doc.toprettyxml(indent="\t")
@@ -350,16 +372,13 @@ def music_track(locale: str):
             artist_id: str = artist["id"]
             artist_name: str = artist["name"]
 
-            # Create primaryArtist element
+            # Set primaryArtist
             primary_artist_elem: Element = doc.createElement("primaryArtist")
-
-            artist_id_element: Element = doc.createElement("id")
-            set_element_value(artist_id_element, artist_id)
-            primary_artist_elem.appendChild(artist_id_element)
-
-            artist_name_element: Element = doc.createElement("name")
-            set_element_value(artist_name_element, artist_name)
-            primary_artist_elem.appendChild(artist_name_element)
+            primary_artist_props = {
+                "id": artist_id,
+                "name": artist_name
+            }
+            set_values_as_elements(doc, primary_artist_elem, primary_artist_props)
             entry.appendChild(primary_artist_elem)
 
             # Get album ID and Title
@@ -367,17 +386,14 @@ def music_track(locale: str):
             album_id: str = album["id"]
             album_name: str = album["title"]
 
-            # Create album element
-            album_elem: Element = doc.createElement("album")
-
-            album_id_element: Element = doc.createElement("id")
-            set_element_value(album_id_element, album_id)
-            album_elem.appendChild(album_id_element)
-
-            album_name_element: Element = doc.createElement("title")
-            set_element_value(album_name_element, album_name)
-            album_elem.appendChild(album_name_element)
-            entry.appendChild(album_elem)
+            # Set album info
+            primary_album_elem: Element = doc.createElement("album")
+            primary_album_props = {
+                "id": album_id,
+                "title": album_name
+            }
+            set_values_as_elements(doc, primary_album_elem, primary_album_props)
+            entry.appendChild(primary_album_elem)
 
             feed.appendChild(entry)
         except:
@@ -416,16 +432,13 @@ def music_album(locale: str):
         artist_id: str = artist["id"]
         artist_name: str = artist["name"]
 
-        # Create primaryArtist element
+        # Set primaryArtist
         primary_artist_elem: Element = doc.createElement("primaryArtist")
-
-        artist_id_element: Element = doc.createElement("id")
-        set_element_value(artist_id_element, artist_id)
-        primary_artist_elem.appendChild(artist_id_element)
-
-        artist_name_element: Element = doc.createElement("name")
-        set_element_value(artist_name_element, artist_name)
-        primary_artist_elem.appendChild(artist_name_element)
+        primary_artist_props = {
+            "id": artist_id,
+            "name": artist_name
+        }
+        set_values_as_elements(doc, primary_artist_elem, primary_artist_props)
         entry.appendChild(primary_artist_elem)
 
         feed.appendChild(entry)
@@ -433,41 +446,41 @@ def music_album(locale: str):
     return Response(xml_str, mimetype=MIME_XML)
 
 
-@app.route("/")
-def commerce():
-    # TODO: Attempt SSL handshake
-    return "Howdy, Zune!"
-
-
 ### MOVIES
 @app.route(f"/v3.2/<string:locale>/chart/zuneDownload/movie/")
 def chart_zunedown_movie(locale: str):
-    with open('reference/catalog.zune.net_v3.2_en-US_hubs_music.xml', 'r') as file:
+    with open(f'reference/catalog.zune.net_v3.2_{locale}_hubs_music.xml', 'r') as file:
         data: str = file.read().replace('\n', '')
         return Response(data, mimetype=MIME_ATOM_XML)
 
 
 @app.route(f"/v3.2/<string:locale>/music/hub/movie/")
 def hubs_movie(locale: str):
-    with open('reference/catalog.zune.net_v3.2_en-US_hubs_music.xml', 'r') as file:
+    with open(f'reference/catalog.zune.net_v3.2_{locale}_hubs_music.xml', 'r') as file:
         data: str = file.read().replace('\n', '')
         return Response(data, mimetype=MIME_ATOM_XML)
 
 
 @app.route(f"/v3.2/<string:locale>/music/hub/video/")
 def hubs_video(locale: str):
-    with open('reference/catalog.zune.net_v3.2_en-US_hubs_music.xml', 'r') as file:
+    with open(f'reference/catalog.zune.net_v3.2_{locale}_hubs_music.xml', 'r') as file:
         data: str = file.read().replace('\n', '')
         return Response(data, mimetype=MIME_ATOM_XML)
 
 
-### IMAGES
-@app.route(f"/v3.2/<string:locale>/image/<string:mbid>")
-def get_image(mbid: str, locale: str):
-    print("Image request for", mbid)
-    import urllib.request
-    image = urllib.request.urlopen(f"http://coverartarchive.org/release/{mbid}/front")
-    return Response(image.read(), mimetype=MIME_JPG)
+### PODCASTS
+@app.route(f"/v3.2/<string:locale>/music/hub/podcast/")
+def hubs_podcasts(locale: str):
+    with open(f'reference/catalog.zune.net_v3.2_{locale}_music_hub_podcast.xml', 'r') as file:
+        data: str = file.read().replace('\n', '')
+        return Response(data, mimetype=MIME_ATOM_XML)
+
+
+@app.route(f"/v3.2/<string:locale>/podcast")
+def podcast_passthrough(locale: str):
+    podcast_url: str = request.args.get('url')
+    podcast = urllib.request.urlopen(podcast_url)
+    return Response(podcast.read(), mimetype="application/rss+xml")
 
 ### Metadata
 # fai.music.metaservices.microsoft.com

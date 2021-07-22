@@ -1,0 +1,35 @@
+<!-- http://www.zune.net/en-us/products/rss.xml -->
+
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:xboxlive="http://www.xbox.com">
+  <channel>
+    <title>Zune News</title>
+    <description>Get the latest information about Zune devices, accessories, software, and services.</description>
+    <link>http://www.zune.net/en-us/products/default.htm</link>
+    <ttl>60</ttl>
+    <language>en-US</language>
+    <copyright>©2008 Microsoft Corporation.  All Rights Reserved
+</copyright>
+    <item>
+      <title>Zune 80GB now available at Zune Originals</title>
+      <guid isPermaLink="false">1196285169302_197697</guid>
+      <description>Customize your Zune player with laser-engraved designs and personal text through a new Web store called Zune Originals.</description>
+      <link>http://www.zuneoriginals.net</link>
+      <pubDate>Thu, 29 Nov 2007 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>You make it you.</title>
+      <guid isPermaLink="false">1194963897423_143068</guid>
+      <description>New Zune players, re-designed Zune software and new online services including the Zune Marketplace and the Zune Social, an online music community.</description>
+      <link>http://www.zune.net/en-us/default.htm</link>
+      <pubDate>Tue, 13 Nov 2007 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Zune Originals</title>
+      <guid isPermaLink="false">1194963991940_683321</guid>
+      <description>Customize your Zune player with laser-engraved designs and personal text through a new Web store called Zune Originals.</description>
+      <link>http://www.zuneoriginals.net</link>
+      <pubDate>Tue, 13 Nov 2007 00:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

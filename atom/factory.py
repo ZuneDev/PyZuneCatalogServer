@@ -1,4 +1,4 @@
-from typing import List
+from typing import Dict
 from xml.dom import minidom
 from xml.dom.minidom import Element, Document, Text
 from datetime import datetime
@@ -13,6 +13,17 @@ def set_element_value(element: Element, value: str):
     content = Text()
     content.data = value
     element.appendChild(content)
+
+
+def set_value_as_element(doc: Document, element: Element, name: str, value: str):
+    prop_element: Element = doc.createElement(name)
+    set_element_value(prop_element, value)
+    element.appendChild(prop_element)
+
+
+def set_values_as_elements(doc: Document, element: Element, props: Dict[str, str]):
+    for name in props:
+        set_value_as_element(doc, element, name, props[name])
 
 
 def create_feed(doc: Document, title: str, id: str, href: str, date_updated: datetime = datetime.today()) -> Element:

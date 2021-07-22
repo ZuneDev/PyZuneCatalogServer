@@ -1,0 +1,124 @@
+<!-- http://catalog.zune.net/v1.1/music/mapping/amg/R   782424/album -->
+
+<?xml version="1.0" encoding="utf-8"?>
+<a:feed xmlns:a="http://www.w3.org/2005/Atom"
+    xmlns:m="http://schemas.zune.net/catalog/music/2007/10">
+    <a:link rel="self" type="application/atom+xml" href="/v1.1/music/mapping/amg/R%20%20%20782424/album" />
+    <a:updated>2008-09-22T05:21:20.8583897Z</a:updated>
+    <a:title type="text">AMG Id Mapping To Zune Album Metadata and Media Id</a:title>
+    <a:author>
+        <a:name>Microsoft Corporation</a:name>
+        <a:uri>http://www.zune.net/</a:uri>
+    </a:author>
+    <a:id>urn:uuid:58f00b00-0400-11db-89ca-0019b92a3933</a:id>
+    <m:amgId>R   782424</m:amgId>
+    <m:type>Album</m:type>
+    <m:primaryArtist>
+        <m:id>urn:uuid:73aa0200-0600-11db-89ca-0019b92a3933</m:id>
+        <m:name>Shakira</m:name>
+    </m:primaryArtist>
+    <m:primaryGenre>
+        <m:id>latin</m:id>
+        <m:title>Latin</m:title>
+    </m:primaryGenre>
+    <a:rights>Copyright (c) Microsoft Corporation.  All rights reserved.</a:rights>
+    <a:entry>
+        <a:updated>2008-09-22T05:21:20.8583897Z</a:updated>
+        <a:title type="text">T  8525916</a:title>
+        <a:content type="html" />
+        <a:id>urn:uuid:5c188200-0500-11db-89ca-0019b92a3933</a:id>
+        <m:amgId>T  8525916</m:amgId>
+        <m:type>Track</m:type>
+        <m:mediaInstances />
+    </a:entry>
+    <a:entry>
+        <a:updated>2008-09-22T05:21:20.8583897Z</a:updated>
+        <a:title type="text">T  8525917</a:title>
+        <a:content type="html" />
+        <a:id>urn:uuid:5d188200-0500-11db-89ca-0019b92a3933</a:id>
+        <m:amgId>T  8525917</m:amgId>
+        <m:type>Track</m:type>
+        <m:mediaInstances />
+    </a:entry>
+    <a:entry>
+        <a:updated>2008-09-22T05:21:20.8583897Z</a:updated>
+        <a:title type="text">T  8525918</a:title>
+        <a:content type="html" />
+        <a:id>urn:uuid:5e188200-0500-11db-89ca-0019b92a3933</a:id>
+        <m:amgId>T  8525918</m:amgId>
+        <m:type>Track</m:type>
+        <m:mediaInstances />
+    </a:entry>
+    <a:entry>
+        <a:updated>2008-09-22T05:21:20.8583897Z</a:updated>
+        <a:title type="text">T  8525919</a:title>
+        <a:content type="html" />
+        <a:id>urn:uuid:5f188200-0500-11db-89ca-0019b92a3933</a:id>
+        <m:amgId>T  8525919</m:amgId>
+        <m:type>Track</m:type>
+        <m:mediaInstances />
+    </a:entry>
+    <a:entry>
+        <a:updated>2008-09-22T05:21:20.8583897Z</a:updated>
+        <a:title type="text">T  8525920</a:title>
+        <a:content type="html" />
+        <a:id>urn:uuid:60188200-0500-11db-89ca-0019b92a3933</a:id>
+        <m:amgId>T  8525920</m:amgId>
+        <m:type>Track</m:type>
+        <m:mediaInstances />
+    </a:entry>
+    <a:entry>
+        <a:updated>2008-09-22T05:21:20.8583897Z</a:updated>
+        <a:title type="text">T  8525921</a:title>
+        <a:content type="html" />
+        <a:id>urn:uuid:61188200-0500-11db-89ca-0019b92a3933</a:id>
+        <m:amgId>T  8525921</m:amgId>
+        <m:type>Track</m:type>
+        <m:mediaInstances />
+    </a:entry>
+    <a:entry>
+        <a:updated>2008-09-22T05:21:20.8583897Z</a:updated>
+        <a:title type="text">T  8525922</a:title>
+        <a:content type="html" />
+        <a:id>urn:uuid:62188200-0500-11db-89ca-0019b92a3933</a:id>
+        <m:amgId>T  8525922</m:amgId>
+        <m:type>Track</m:type>
+        <m:mediaInstances />
+    </a:entry>
+    <a:entry>
+        <a:updated>2008-09-22T05:21:20.8583897Z</a:updated>
+        <a:title type="text">T  8525923</a:title>
+        <a:content type="html" />
+        <a:id>urn:uuid:63188200-0500-11db-89ca-0019b92a3933</a:id>
+        <m:amgId>T  8525923</m:amgId>
+        <m:type>Track</m:type>
+        <m:mediaInstances />
+    </a:entry>
+    <a:entry>
+        <a:updated>2008-09-22T05:21:20.8583897Z</a:updated>
+        <a:title type="text">T  8525924</a:title>
+        <a:content type="html" />
+        <a:id>urn:uuid:64188200-0500-11db-89ca-0019b92a3933</a:id>
+        <m:amgId>T  8525924</m:amgId>
+        <m:type>Track</m:type>
+        <m:mediaInstances />
+    </a:entry>
+    <a:entry>
+        <a:updated>2008-09-22T05:21:20.8583897Z</a:updated>
+        <a:title type="text">T  8525925</a:title>
+        <a:content type="html" />
+        <a:id>urn:uuid:65188200-0500-11db-89ca-0019b92a3933</a:id>
+        <m:amgId>T  8525925</m:amgId>
+        <m:type>Track</m:type>
+        <m:mediaInstances />
+    </a:entry>
+    <a:entry>
+        <a:updated>2008-09-22T05:21:20.8583897Z</a:updated>
+        <a:title type="text">T  8525926</a:title>
+        <a:content type="html" />
+        <a:id>urn:uuid:66188200-0500-11db-89ca-0019b92a3933</a:id>
+        <m:amgId>T  8525926</m:amgId>
+        <m:type>Track</m:type>
+        <m:mediaInstances />
+    </a:entry>
+</a:feed>

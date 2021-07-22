@@ -1,0 +1,116 @@
+<!-- http://catalog.zune.net/v3.2/en-US/clientTypes/WinMobile 7.1/hubTypes/marketplace/hub?store=Zest&store=&store= -->
+
+<?xml version="1.0" encoding="utf-8"?>
+<a:feed xmlns:a="http://www.w3.org/2005/Atom"
+    xmlns:os="http://a9.com/-/spec/opensearch/1.1/"
+    xmlns="http://schemas.zune.net/catalog/apps/2008/02">
+    <a:link rel="self" type="application/atom+xml" href="/v3.2/en-US/clientTypes/WinMobile%207.1/hubTypes/marketplace/hub?store=Zest&amp;store=&amp;store=" />
+    <a:updated>2012-01-12T17:04:30.4439363Z</a:updated>
+    <a:title type="text">marketplace-US-winMobile7</a:title>
+    <a:id>marketplace-US-WinMobile71-ALL-ALL</a:id>
+    <templates>
+        <template>
+            <mimeType>application/uix</mimeType>
+            <templateName>MarketplaceHub</templateName>
+        </template>
+    </templates>
+    <a:entry>
+        <a:link rel="alternate" type="application/atom+xml" href="/v3.2/en-US/music/collection/features/3e6ea222-256f-4f3b-81d1-7bbca0ae0813" />
+        <a:updated>2012-01-12T17:04:30.4439363Z</a:updated>
+        <a:title type="text">List Of Items</a:title>
+        <a:id>urn:uuid:3e6ea222-256f-4f3b-81d1-7bbca0ae0813</a:id>
+        <index>1</index>
+        <link>
+            <type>FeatureCollection</type>
+            <target>3E6EA222-256F-4F3B-81D1-7BBCA0AE0813</target>
+        </link>
+        <editorialItems>
+            <editorialItem>
+                <id>urn:uuid:ef12719b-4753-4ee6-87f0-674f0dffcc9f</id>
+                <link>
+                    <type>Application</type>
+                    <target>ca8d6603-a9ae-4a05-8643-baad091ecdd1</target>
+                </link>
+                <title>Spotify</title>
+                <sequenceNumber>1</sequenceNumber>
+                <image>
+                    <id>urn:uuid:9c3be70f-b18d-40c3-9dd7-f8860146ebdc</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:6343af90-f15b-4cc3-92e6-3340701638d5</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:6e9de89a-91e0-4773-a9d7-d4870070910f</id>
+                <link>
+                    <type>Application</type>
+                    <target>1040a930-f36b-e011-81d2-78e7d1fa76f8</target>
+                </link>
+                <title>Shazam Encore</title>
+                <sequenceNumber>2</sequenceNumber>
+                <image>
+                    <id>urn:uuid:e614ae40-a2c8-4035-bdde-61edb3009ff6</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:b4aecf21-64d9-4370-9840-9e11cb104a04</id>
+                </backgroundImage>
+            </editorialItem>
+            <editorialItem>
+                <id>urn:uuid:27cf0c24-21d3-44a7-992e-02ddb5310cce</id>
+                <link>
+                    <type>Application</type>
+                    <target>4a9378e6-bad1-df11-9eae-00237de2db9e</target>
+                </link>
+                <title>Local Concerts</title>
+                <sequenceNumber>3</sequenceNumber>
+                <image>
+                    <id>urn:uuid:d942a017-4144-445d-8aaa-7db29dcf0134</id>
+                </image>
+                <backgroundImage>
+                    <id>urn:uuid:7f802f85-31e5-4792-8978-8eb38bcabceb</id>
+                </backgroundImage>
+            </editorialItem>
+        </editorialItems>
+        <features>
+            <feature>
+                <id>urn:uuid:ef12719b-4753-4ee6-87f0-674f0dffcc9f</id>
+                <link>
+                    <type>Application</type>
+                    <target>ca8d6603-a9ae-4a05-8643-baad091ecdd1</target>
+                </link>
+                <title>Spotify</title>
+                <sequenceNumber>1</sequenceNumber>
+                <image>
+                    <id>urn:uuid:9c3be70f-b18d-40c3-9dd7-f8860146ebdc</id>
+                </image>
+            </feature>
+            <feature>
+                <id>urn:uuid:6e9de89a-91e0-4773-a9d7-d4870070910f</id>
+                <link>
+                    <type>Application</type>
+                    <target>1040a930-f36b-e011-81d2-78e7d1fa76f8</target>
+                </link>
+                <title>Shazam Encore</title>
+                <sequenceNumber>2</sequenceNumber>
+                <image>
+                    <id>urn:uuid:e614ae40-a2c8-4035-bdde-61edb3009ff6</id>
+                </image>
+            </feature>
+            <feature>
+                <id>urn:uuid:27cf0c24-21d3-44a7-992e-02ddb5310cce</id>
+                <link>
+                    <type>Application</type>
+                    <target>4a9378e6-bad1-df11-9eae-00237de2db9e</target>
+                </link>
+                <title>Local Concerts</title>
+                <sequenceNumber>3</sequenceNumber>
+                <image>
+                    <id>urn:uuid:d942a017-4144-445d-8aaa-7db29dcf0134</id>
+                </image>
+            </feature>
+        </features>
+    </a:entry>
+    <a:author>
+        <a:name>Microsoft Corporation</a:name>
+    </a:author>
+</a:feed>

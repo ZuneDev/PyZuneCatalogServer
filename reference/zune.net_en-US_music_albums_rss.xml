@@ -1,0 +1,94 @@
+<!-- http://www.zune.net/en-us/music/albums/rss.xml -->
+
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:xboxlive="http://www.xbox.com">
+  <channel>
+    <title>New Albums</title>
+    <description>Get the scoop on new featured albums available in Zune Marketplace.</description>
+    <link>http://www.zune.net/en-us/music/albums/default.htm</link>
+    <ttl>60</ttl>
+    <language>en-US</language>
+    <copyright>©2008 Microsoft Corporation.  All Rights Reserved
+</copyright>
+    <item>
+      <title>Harlem's American Gangster (Parental Advisory)</title>
+      <guid isPermaLink="false">1204585486044_481775</guid>
+      <description>By JIM JONES</description>
+      <link>http://social.zune.net/AlbumDetails.aspx?aid=83d9c600-0100-11db-89ca-0019b92a3933</link>
+      <pubDate>Tue, 04 Mar 2008 00:00:00 GMT</pubDate>
+      <category>Albums</category>
+    </item>
+    <item>
+      <title>Daylight (Remixes)</title>
+      <guid isPermaLink="false">1204585474021_446344</guid>
+      <description>By KELLY ROWLAND</description>
+      <link>http://social.zune.net/AlbumDetails.aspx?aid=e5fbbc00-0100-11db-89ca-0019b92a3933</link>
+      <pubDate>Tue, 04 Mar 2008 00:00:00 GMT</pubDate>
+      <category>Albums</category>
+    </item>
+    <item>
+      <title>Run (Single)</title>
+      <guid isPermaLink="false">1204585473412_721658</guid>
+      <description>By GNARLS BARKLEY</description>
+      <link>http://social.zune.net/AlbumDetails.aspx?aid=c143c400-0100-11db-89ca-0019b92a3933</link>
+      <pubDate>Tue, 04 Mar 2008 00:00:00 GMT</pubDate>
+      <category>Albums</category>
+    </item>
+    <item>
+      <title>Lust Lust Lust</title>
+      <guid isPermaLink="false">1204585472925_459771</guid>
+      <description>By THE RAVEONETTES</description>
+      <link>http://social.zune.net/AlbumDetails.aspx?aid=a92ec600-0100-11db-89ca-0019b92a3933</link>
+      <pubDate>Tue, 04 Mar 2008 00:00:00 GMT</pubDate>
+      <category>Albums</category>
+    </item>
+    <item>
+      <title>Dive Deep</title>
+      <guid isPermaLink="false">1204585472484_5568</guid>
+      <description>By MORCHEEBA</description>
+      <link>http://social.zune.net/AlbumDetails.aspx?aid=0f76c600-0100-11db-89ca-0019b92a3933</link>
+      <pubDate>Tue, 04 Mar 2008 00:00:00 GMT</pubDate>
+      <category>Albums</category>
+    </item>
+    <item>
+      <title>Conquest/Conquista</title>
+      <guid isPermaLink="false">1204585461628_693962</guid>
+      <description>By THE WHITE STRIPES</description>
+      <link>http://social.zune.net/AlbumDetails.aspx?aid=9573c600-0100-11db-89ca-0019b92a3933</link>
+      <pubDate>Tue, 04 Mar 2008 00:00:00 GMT</pubDate>
+      <category>Albums</category>
+    </item>
+    <item>
+      <title>Live</title>
+      <guid isPermaLink="false">1204585461235_922428</guid>
+      <description>By B.B. KING</description>
+      <link>http://social.zune.net/AlbumDetails.aspx?aid=89cbc500-0100-11db-89ca-0019b92a3933</link>
+      <pubDate>Tue, 04 Mar 2008 00:00:00 GMT</pubDate>
+      <category>Albums</category>
+    </item>
+    <item>
+      <title>It Is Time for a Love Revolution</title>
+      <guid isPermaLink="false">1204585461034_552322</guid>
+      <description>By LENNY KRAVITZ</description>
+      <link>http://social.zune.net/AlbumDetails.aspx?aid=f97bc100-0100-11db-89ca-0019b92a3933</link>
+      <pubDate>Tue, 04 Mar 2008 00:00:00 GMT</pubDate>
+      <category>Albums</category>
+    </item>
+    <item>
+      <title>Thriller (25th Anniversary Deluxe Edition)</title>
+      <guid isPermaLink="false">1204585460728_886603</guid>
+      <description>By MICHAEL JACKSON</description>
+      <link>http://social.zune.net/AlbumDetails.aspx?aid=11e5c300-0100-11db-89ca-0019b92a3933</link>
+      <pubDate>Tue, 04 Mar 2008 00:00:00 GMT</pubDate>
+      <category>Albums</category>
+    </item>
+    <item>
+      <title>Do You Like Rock Music?</title>
+      <guid isPermaLink="false">1204585460200_845918</guid>
+      <description>By British Sea Power</description>
+      <link>http://social.zune.net/AlbumDetails.aspx?aid=110cc400-0100-11db-89ca-0019b92a3933</link>
+      <pubDate>Tue, 04 Mar 2008 00:00:00 GMT</pubDate>
+      <category>Albums</category>
+    </item>
+  </channel>
+</rss>

@@ -93,3 +93,5 @@ ENV/
 .vscode/
 .azure/
 .idea/
+
+/secrets.py

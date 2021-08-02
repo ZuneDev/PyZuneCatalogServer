@@ -1,9 +1,13 @@
-import urllib
+import urllib.request
+import urllib.error
 from xml.dom.minidom import Document, Element
 
 from flask import Flask, request, abort, Response
 import musicbrainzngs
 from musicbrainzngs.musicbrainz import ResponseError
+import api.discogs
+import api.deezer
+import api.imdb
 
 from atom.factory import *
 
@@ -12,7 +16,7 @@ locale = getdefaultlocale()[0]
 
 
 app = Flask(__name__)
-musicbrainzngs.set_useragent("Zune", "4.8", "https://github.com/yoshiask/PyZuneCatalogServer")
+musicbrainzngs.set_useragent("Zune", "4.8", "https://github.com/ZuneDev/PyZuneCatalogServer")
 
 
 import re
@@ -21,7 +25,7 @@ def allow_zunestk_cors(response):
     r = request.origin
     if r is None:
         return response
-    if re.match(r"https?://(127\.0\.0\.(?:\d*)|localhost(?::\d+)?|(?:\w*\.)*zunes\.tk)", r):
+    if re.match(r"https?://(127\.0\.0\.(?:\d*)|localhost(?::\d+)?|(?:\w*\.)*zunes\.(tk|me))", r):
         response.headers.add('Access-Control-Allow-Origin', r)
         response.headers.add('Access-Control-Allow-Credentials', 'true')
         response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
@@ -117,6 +121,7 @@ def music_get_album(album_id: str, locale: str):
             entry.appendChild(length_elem)
         except:
             pass
+
         try:
             track_position: str = track["position"]
             # FIXME: Add track number element
@@ -131,13 +136,17 @@ def music_get_album(album_id: str, locale: str):
             # Add rights
             right: Element = doc.createElement("right")
             right_props = {
-                "providerName": "YouTube",
-                "providerCode": "27407509:MP3_DOWNLOAD_UENC_320kb_070",
-                "pointsPrice": "800",
+                # "providerName": "YouTube",
+                "providerCode": "117767492:MP3_DOWNLOAD_UENC_256kb_075",
+                "price": 800,
+                "priceCurrencyCode": "MPT",
                 "licenseType": "Preview",
-                "audioEncoding": "WMA",
+                "audioEncoding": "MP3",
                 "offerId": "urn:uuid:9534a201-2102-11db-89ca-0019b92a3933",
-                "offerInstanceId": "urn:uuid:9534a201-2102-11db-89ca-0019b92a3933",
+                "paymentTypes": {
+                    "paymentType": "Microsoft Points"
+                }
+                # "offerInstanceId": "urn:uuid:9534a201-2102-11db-89ca-0019b92a3933",
             }
             set_values_as_elements(doc, right, right_props)
             rights: Element = doc.createElement("rights")
@@ -163,7 +172,29 @@ def music_album_details(id: str, fragment: str, locale: str):
 # Get artist information
 @app.route(f"/v3.2/<string:locale>/music/artist/<string:id>/")
 def music_get_artist(id: str, locale: str):
-    return music_get_artist_tracks(id, locale)
+    artist, mb_artist = api.discogs.get_artist_from_mbid(id)
+    artist_name: str = mb_artist["name"]
+    artist_sort_name: str = mb_artist["sort-name"]
+
+    #if type(artist) is int:
+    #    abort(artist)
+    #    return
+
+    doc: Document = minidom.Document()
+    feed: Element = create_feed(doc, artist_name, id, request.endpoint)
+    artist_props = {
+        "id": id,
+        "title": artist_name,
+        "sortTitle": artist_sort_name,
+        "isVariousArtist ": False,
+        #"biographyLink": artist["resource_url"],
+        # TODO: How to set artist image?
+        "backgroundImageId": "7da9ffbf-2b5a-4162-b2eb-5818bd6574f3"
+    }
+    set_values_as_elements(doc, feed, artist_props)
+
+    xml_str = doc.toprettyxml(indent="\t")
+    return Response(xml_str, mimetype=MIME_XML)
 
 
 # Get artist's tracks
@@ -239,9 +270,21 @@ def music_get_artist_albums(artist_id: str, locale: str):
     return Response(xml_str, mimetype=MIME_XML)
 
 
-@app.route(f"/v3.2/<string:locale>/music/artist/<string:id>/<path:fragment>/")
-def music_artist_details(id: str, fragment: str, locale: str):
-    return fragment
+@app.route(f"/v3.2/<string:locale>/music/artist/<string:id>/primaryImage/")
+def music_artist_primaryImage(id: str, locale: str):
+    response = api.deezer.get_artist_from_mbid(id)
+
+    artist, mb_artist = response
+    if type(artist) is int:
+        abort(artist)
+        return
+
+    # Request the image from the API and forward it to the Zune software
+    try:
+        image = urllib.request.urlopen(artist["picture_big"])
+        return Response(image.read(), mimetype=MIME_JPG)
+    except urllib.error.HTTPError as error:
+        abort(error.code)
 
 
 @app.route("/v3.2/<string:locale>/music/track/<string:mbid>/")
@@ -259,7 +302,8 @@ def music_get_track(mbid: str, locale: str):
     title: str = recording["title"]
     feed: Element = create_feed(doc, title, id, request.endpoint)
 
-    #entry: Element = create_entry(doc, title, id, f"/v3.2/{locale}/music/track/" + id)
+    entry: Element = create_entry(doc, title, id, f"/v3.2/{locale}/music/track/" + id)
+    feed.appendChild(entry)
 
     # Get artist ID and Name
     artist = recording["artist-credit"][0]["artist"]
@@ -276,7 +320,7 @@ def music_get_track(mbid: str, locale: str):
     artist_name_element: Element = doc.createElement("name")
     set_element_value(artist_name_element, artist_name)
     primary_artist_elem.appendChild(artist_name_element)
-    feed.appendChild(primary_artist_elem)
+    entry.appendChild(primary_artist_elem)
 
     # Get album ID and Title
     album = recording["release-list"][0]
@@ -286,13 +330,30 @@ def music_get_track(mbid: str, locale: str):
     # Create album elements
     album_id_element: Element = doc.createElement("albumId")
     set_element_value(album_id_element, album_id)
-    feed.appendChild(album_id_element)
+    entry.appendChild(album_id_element)
 
     album_name_element: Element = doc.createElement("albumTitle")
     set_element_value(album_name_element, album_name)
-    feed.appendChild(album_name_element)
+    entry.appendChild(album_name_element)
 
-    #feed.appendChild(entry)
+    # Add rights
+    right: Element = doc.createElement("right")
+    right_props = {
+        "providerCode": "117767492:MP3_DOWNLOAD_UENC_256kb_075",
+        "price": 800,
+        "priceCurrencyCode": "MPT",
+        "licenseType": "Preview",
+        "audioEncoding": "MP3",
+        "offerId": "urn:uuid:9534a201-2102-11db-89ca-0019b92a3933",
+        "paymentTypes": {
+            "paymentType": "Microsoft Points"
+        }
+    }
+    set_values_as_elements(doc, right, right_props)
+    rights: Element = doc.createElement("rights")
+    rights.appendChild(right)
+    entry.appendChild(rights)
+
     xml_str = doc.toprettyxml(indent="\t")
     print(xml_str)
     return Response(xml_str, mimetype=MIME_XML)
@@ -301,14 +362,23 @@ def music_get_track(mbid: str, locale: str):
 # Get top tracks
 @app.route(f"/v3.2/<string:locale>/music/chart/zune/tracks/")
 def music_chart_tracks(locale: str):
-    try:
-        recordings = musicbrainzngs.search_recordings("*", limit=100)
-    except ResponseError as error:
-        abort(error.cause.code)
+    deezer = api.deezer.get_chart()
+    if type(deezer) is int:
+        abort(deezer)
         return
+
     doc: Document = minidom.Document()
     feed: Element = create_feed(doc, "tracks", "tracks", f"/v3.2/{locale}/music/chart/zune/tracks")
-    for recording in recordings["recording-list"]:
+    for track in deezer["tracks"]["data"]:
+        try:
+            recording = musicbrainzngs.search_recordings(
+                track["artist"]["name"] + ", " + track["album"]["title"] + ", " + track["title"]
+                , 1, "text")["recording-list"][0]
+        except ResponseError as error:
+            #abort(error.cause.code)
+            #return
+            continue
+
         # Set track ID and Title
         id: str = recording["id"]
         title: str = recording["title"]
@@ -318,6 +388,14 @@ def music_chart_tracks(locale: str):
         artist = recording["artist-credit"][0]["artist"]
         artist_id: str = artist["id"]
         artist_name: str = artist["name"]
+
+        # Set track information
+        track_props = {
+            "isExplicit": track["explicit_lyrics"],
+            "playRank": track["rank"],
+            "isActionable": True,
+        }
+        set_values_as_elements(doc, entry, track_props)
 
         # Set primaryArtist
         primary_artist_elem: Element = doc.createElement("primaryArtist")
@@ -331,21 +409,34 @@ def music_chart_tracks(locale: str):
         # Add rights
         right: Element = doc.createElement("right")
         right_props = {
-            "providerName": "YouTube",
-            "providerCode": "27407509:MP3_DOWNLOAD_UENC_320kb_070",
-            "pointsPrice": "800",
+            #"providerName": "YouTube",
+            "providerCode": "117767492:MP3_DOWNLOAD_UENC_256kb_075",
+            "price": 800,
+            "priceCurrencyCode": "MPT",
             "licenseType": "Preview",
-            "audioEncoding": "WMA",
+            "audioEncoding": "MP3",
             "offerId": "urn:uuid:9534a201-2102-11db-89ca-0019b92a3933",
-            "offerInstanceId": "urn:uuid:9534a201-2102-11db-89ca-0019b92a3933",
+            "paymentTypes": {
+                "paymentType": "Microsoft Points"
+            }
+            #"offerInstanceId": "urn:uuid:9534a201-2102-11db-89ca-0019b92a3933",
         }
         set_values_as_elements(doc, right, right_props)
         rights: Element = doc.createElement("rights")
         rights.appendChild(right)
         entry.appendChild(rights)
 
+        try:
+            track_position: str = track["position"]
+            index_elem: Element = doc.createElement("trackNumber")
+            set_element_value(index_elem, track_position)
+            entry.appendChild(index_elem)
+        except:
+            pass
+
         feed.appendChild(entry)
     xml_str = doc.toprettyxml(indent="\t")
+    print(xml_str)
     return Response(xml_str, mimetype=MIME_XML)
 
 
@@ -456,9 +547,30 @@ def chart_zunedown_movie(locale: str):
 
 @app.route(f"/v3.2/<string:locale>/music/hub/movie/")
 def hubs_movie(locale: str):
-    with open(f'reference/catalog.zune.net_v3.2_{locale}_hubs_music.xml', 'r') as file:
-        data: str = file.read().replace('\n', '')
-        return Response(data, mimetype=MIME_ATOM_XML)
+    imdb = api.imdb.get_chart()
+    if type(imdb) is int:
+        abort(imdb)
+        return
+
+    doc: Document = minidom.Document()
+    feed: Element = create_feed(doc, "Movies", "movies", f"/v3.2/{locale}/music/hub/movie")
+    for movie in imdb:
+        # Set movie ID and Title
+        id: str = api.imdb.IMDB_GUID_TITLE_BASE + movie["id"][2:]
+        title: str = movie["title"]
+        entry: Element = create_entry(doc, title, id, f"/v3.2/{locale}/movies/" + id)
+
+        # Set track information
+        track_props = {
+            "imageId": id,
+            "isActionable": True,
+        }
+        set_values_as_elements(doc, entry, track_props)
+
+        feed.appendChild(entry)
+    xml_str = doc.toprettyxml(indent="\t")
+    print(xml_str)
+    return Response(xml_str, mimetype=MIME_XML)
 
 
 @app.route(f"/v3.2/<string:locale>/music/hub/video/")

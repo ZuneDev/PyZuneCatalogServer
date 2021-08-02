@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, Any
 from xml.dom import minidom
 from xml.dom.minidom import Element, Document, Text
 from datetime import datetime
@@ -15,13 +15,16 @@ def set_element_value(element: Element, value: str):
     element.appendChild(content)
 
 
-def set_value_as_element(doc: Document, element: Element, name: str, value: str):
+def set_value_as_element(doc: Document, element: Element, name: str, value: Any):
     prop_element: Element = doc.createElement(name)
-    set_element_value(prop_element, value)
+    if type(value) is dict:
+        set_values_as_elements(doc, prop_element, value)
+    else:
+        set_element_value(prop_element, value)
     element.appendChild(prop_element)
 
 
-def set_values_as_elements(doc: Document, element: Element, props: Dict[str, str]):
+def set_values_as_elements(doc: Document, element: Element, props: Dict[str, Any]):
     for name in props:
         set_value_as_element(doc, element, name, props[name])
 

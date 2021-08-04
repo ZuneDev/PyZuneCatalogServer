@@ -11,8 +11,8 @@ import api.imdb
 
 from atom.factory import *
 
-from locale import *
-locale = getdefaultlocale()[0]
+from locale import getdefaultlocale
+sys_locale = getdefaultlocale()[0]
 
 
 app = Flask(__name__)
@@ -50,23 +50,68 @@ def music_genre_details(id: str, locale: str):
         return Response(data, mimetype=MIME_ATOM_XML)
 
 
-@app.route(f"/v3.2/<string:locale>/music/genre/<string:id>/albums/")
-def music_genre_albums(id: str, locale: str):
-    with open(f'reference/catalog.zune.net_v3.2_{locale}_music_genre.xml', 'r') as file:
-        data: str = file.read().replace('\n', '')
-        return Response(data, mimetype=MIME_ATOM_XML)
+@app.route(f"/v3.2/<string:locale>/music/genre/<string:z_genre_id>/albums/")
+def music_genre_albums(z_genre_id: str, locale: str):
+    from musicbrainz.genrelist import GENRES, get_zune_genre_name
+    z_genre_name: str = get_zune_genre_name(z_genre_id)
+
+    doc: Document = minidom.Document()
+    feed: Element = create_feed(doc, z_genre_name, z_genre_id, request.endpoint)
+
+    max_num_albums: int = 50
+    num_albums: int = 0
+    done: bool = False
+    for mb_genre_id, mb_genre_name in GENRES[z_genre_name].items():
+        try:
+            albums = musicbrainzngs.search_releases(mb_genre_name, "tag")["release-list"]
+        except ResponseError as error:
+            abort(error.cause.code)
+            return
+
+        for album in albums:
+            done = num_albums > max_num_albums
+            if done:
+                break
+
+            album_name: str = album["title"]
+            album_id: str = album["id"]
+            artist = album["artist-credit"][0]["artist"]
+            artist_id: str = artist["id"]
+            artist_name: str = artist["name"]
+
+            entry: Element = create_entry(doc, album_name, album_id, f"/v3.2/{locale}/music/album/{album_id}")
+
+            # Set primaryArtist
+            primary_artist_elem: Element = doc.createElement("primaryArtist")
+            primary_artist_props = {
+                "id": artist_id,
+                "name": artist_name
+            }
+            set_values_as_elements(doc, primary_artist_elem, primary_artist_props)
+            entry.appendChild(primary_artist_elem)
+
+            num_albums += 1
+            feed.appendChild(entry)
+
+        if done:
+            break
+
+    xml_str = doc.toprettyxml(indent="\t")
+    return Response(xml_str, mimetype=MIME_XML)
 
 
 @app.route(f"/v3.2/<string:locale>/music/genre/")
 def music_genre(locale: str):
-    from musicbrainz.genrelist import GENRES
+    from musicbrainz.genrelist import GENRES, get_zune_genre_id
     lastpulledlist: datetime = datetime(2021, 2, 21)
 
     doc: Document = minidom.Document()
     feed: Element = create_feed(doc, "Genres", "genre", request.endpoint, lastpulledlist)
 
-    for genre_name, genre_id in GENRES.items():
-        entry: Element = create_entry(doc, genre_name, genre_id, f"/v3.2/{locale}/music/genre" + genre_id, lastpulledlist)
+    for z_genre_name, mb_genres in GENRES.items():
+        z_genre_id: str = get_zune_genre_id(z_genre_name)
+        feed_link: str = f"/v3.2/{locale}/music/genre/{z_genre_id}"
+        entry: Element = create_entry(doc, z_genre_name, z_genre_id, feed_link, lastpulledlist)
         feed.appendChild(entry)
 
     xml_str = doc.toprettyxml(indent="\t")
@@ -362,21 +407,22 @@ def music_get_track(mbid: str, locale: str):
 # Get top tracks
 @app.route(f"/v3.2/<string:locale>/music/chart/zune/tracks/")
 def music_chart_tracks(locale: str):
-    deezer = api.deezer.get_chart()
+    deezer = api.deezer.get_chart_tracks()
     if type(deezer) is int:
         abort(deezer)
         return
 
     doc: Document = minidom.Document()
-    feed: Element = create_feed(doc, "tracks", "tracks", f"/v3.2/{locale}/music/chart/zune/tracks")
-    for track in deezer["tracks"]["data"]:
+    feed: Element = create_feed(doc, "Tracks", "tracks", f"/v3.2/{locale}/music/chart/zune/tracks")
+    for track in deezer:
         try:
             recording = musicbrainzngs.search_recordings(
-                track["artist"]["name"] + ", " + track["album"]["title"] + ", " + track["title"]
-                , 1, "text")["recording-list"][0]
-        except ResponseError as error:
-            #abort(error.cause.code)
-            #return
+                f"artistname:{track['artist']['name']} AND release:{track['album']['title']}"
+                f"AND recording:{track['title']}"
+                , 1, True)["recording-list"][0]
+        except ResponseError as res_err:
+            continue
+        except IndexError as idx_err:
             continue
 
         # Set track ID and Title

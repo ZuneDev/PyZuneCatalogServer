@@ -3,6 +3,7 @@ import urllib.error
 import musicbrainzngs
 from musicbrainzngs.musicbrainz import ResponseError
 import json
+from utils import get_json
 
 from typing import Union, Tuple
 
@@ -34,10 +35,25 @@ def get_artist_from_mbobj(mbobj: dict) -> Union[int, dict]:
     return deezer
 
 
-def get_chart() -> Union[int, dict]:
-    try:
-        response = urllib.request.urlopen(DEEZER_API + "/chart")
-    except urllib.error.HTTPError as error:
-        return error.code
+def get_chart(genre_id: int = 0) -> Union[int, dict]:
+    return get_json(DEEZER_API + f"/{genre_id}/chart")
 
-    return json.load(response)
+
+def get_chart_tracks(genre_id: int = 0) -> Union[int, dict]:
+    return get_json(DEEZER_API + f"/{genre_id}/chart/tracks")["data"]
+
+
+def get_chart_albums(genre_id: int = 0) -> Union[int, dict]:
+    return get_json(DEEZER_API + f"/{genre_id}/chart/albums")["data"]
+
+
+def get_chart_artists(genre_id: int = 0) -> Union[int, dict]:
+    return get_json(DEEZER_API + f"/{genre_id}/chart/artists")["data"]
+
+
+def get_chart_playlists(genre_id: int = 0) -> Union[int, dict]:
+    return get_json(DEEZER_API + f"/{genre_id}/chart/playlists")["data"]
+
+
+def get_chart_podcasts(genre_id: int = 0) -> Union[int, dict]:
+    return get_json(DEEZER_API + f"/{genre_id}/chart/podcasts")["data"]

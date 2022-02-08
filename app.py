@@ -234,7 +234,7 @@ def music_get_artist(id: str, locale: str):
         "id": id,
         "title": artist_name,
         "sortTitle": artist_sort_name,
-        "isVariousArtist ": False,
+        "isVariousArtist": False,
         #"biographyLink": artist["resource_url"],
         # TODO: How to set artist image?
         "backgroundImageId": "7da9ffbf-2b5a-4162-b2eb-5818bd6574f3"

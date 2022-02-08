@@ -1,3 +1,4 @@
+import mimetypes
 import urllib.request
 import urllib.error
 from xml.dom.minidom import Document, Element
@@ -34,6 +35,11 @@ def allow_zunestk_cors(response):
         response.headers.add('Access-Control-Allow-Headers', 'Authorization')
         response.headers.add('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE')
     return response
+
+
+@app.route("/")
+def default():
+    return Response("Welcome to the Social", mimetype="text/plain")
 
 
 @app.route(f"/v3.2/<string:locale>/hubs/music")

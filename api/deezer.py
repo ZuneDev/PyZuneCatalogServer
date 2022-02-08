@@ -36,24 +36,24 @@ def get_artist_from_mbobj(mbobj: dict) -> Union[int, dict]:
 
 
 def get_chart(genre_id: int = 0) -> Union[int, dict]:
-    return get_json(DEEZER_API + f"/{genre_id}/chart")
+    return get_json(DEEZER_API + f"/chart/{genre_id}")
 
 
 def get_chart_tracks(genre_id: int = 0) -> Union[int, dict]:
-    return get_json(DEEZER_API + f"/{genre_id}/chart/tracks")["data"]
+    return get_json(DEEZER_API + f"/chart/{genre_id}/tracks")["data"]
 
 
 def get_chart_albums(genre_id: int = 0) -> Union[int, dict]:
-    return get_json(DEEZER_API + f"/{genre_id}/chart/albums")["data"]
+    return get_json(DEEZER_API + f"/chart/{genre_id}/albums")["data"]
 
 
 def get_chart_artists(genre_id: int = 0) -> Union[int, dict]:
-    return get_json(DEEZER_API + f"/{genre_id}/chart/artists")["data"]
+    return get_json(DEEZER_API + f"/chart/{genre_id}/artists")["data"]
 
 
 def get_chart_playlists(genre_id: int = 0) -> Union[int, dict]:
-    return get_json(DEEZER_API + f"/{genre_id}/chart/playlists")["data"]
+    return get_json(DEEZER_API + f"/chart/{genre_id}/playlists")["data"]
 
 
 def get_chart_podcasts(genre_id: int = 0) -> Union[int, dict]:
-    return get_json(DEEZER_API + f"/{genre_id}/chart/podcasts")["data"]
+    return get_json(DEEZER_API + f"/chart/{genre_id}/podcasts")["data"]

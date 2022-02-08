@@ -9,6 +9,7 @@ from musicbrainzngs.musicbrainz import ResponseError
 import api.discogs
 import api.deezer
 import api.imdb
+import utils
 
 from atom.factory import *
 
@@ -164,10 +165,8 @@ def music_get_album(album_id: str, locale: str):
 
         try:
             length_ms: int = int(track["track_or_recording_length"])
-            # FIXME: Add duration element
             length_elem: Element = doc.createElement("duration")
-            length_timespan: str = f"00:00:00.{length_ms:0>3}"
-            print("Duration:", length_timespan)
+            length_timespan: str = utils.format_timespan(length_ms)
             set_element_value(length_elem, length_timespan)
             entry.appendChild(length_elem)
         except:
@@ -175,9 +174,7 @@ def music_get_album(album_id: str, locale: str):
 
         try:
             track_position: str = track["position"]
-            # FIXME: Add track number element
             index_elem: Element = doc.createElement("trackNumber")
-            print("Track #:", track_position)
             set_element_value(index_elem, track_position)
             entry.appendChild(index_elem)
         except:

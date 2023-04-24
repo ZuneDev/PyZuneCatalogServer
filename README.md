@@ -1,6 +1,8 @@
-# PyZuneCatalogServer
+# PyZuneCatalogServer NOTICE
 
-This repository houses a community effort to recreate the Zune Marketplace servers.
+This repository houses the initial community effort to recreate the Zune Marketplace servers.
+
+Development has since shifted to [ZuneNetApi](https://github.com/ZuneDev/ZuneNetApi).
 
 ## Contributing
 
